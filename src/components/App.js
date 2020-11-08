@@ -11,6 +11,7 @@ import RandomBeer from "./RandomBeer";
 import "../css/Main.css";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import BeerSchool from "./BeerSchool";
 
 class App extends Component {
   // initialize state with properties
@@ -125,6 +126,9 @@ class App extends Component {
 
               <Route path="/beer-categories">
                 <CategoryList categories={this.state.categories} />
+              </Route>
+              <Route path="/beer-school">
+                <BeerSchool />
               </Route>
 
               <Route path="/random">

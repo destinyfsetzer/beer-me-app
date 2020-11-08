@@ -17,7 +17,7 @@ class SearchBar extends Component {
       <div className="search-bar">
         <form onSubmit={this.onBeerSubmit}>
           <div className="mb-2">
-            <h3 className="search-bar__title">Beers</h3>
+            <h3 className="search-bar__title">Find a beer</h3>
             <span className="total-results">
               {this.props.totalResults} results
             </span>

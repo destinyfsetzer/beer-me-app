@@ -21,7 +21,7 @@ class Sidebar extends Component {
     return (
       <div className="sidebar col-sm-3 p-0">
         <div className="sidebar-title">
-          <h2>Beer Me</h2>
+          <h1>BEER ME</h1>
           <h6>discover new brews</h6>
         </div>
 
@@ -46,6 +46,16 @@ class Sidebar extends Component {
                 className="nav-link"
               >
                 <i className="fas fa-list"></i>Categories
+              </NavLink>
+            </li>
+
+            <li className="nav-item">
+              <NavLink
+                to="/beer-school"
+                className="nav-link"
+                activeClassName="active"
+              >
+                <i className="fas fa-book"></i>Beer School
               </NavLink>
             </li>
 
