@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import brewery from "../api/Proxy";
-
+import Map from "./Map";
 import Sidebar from "./Sidebar";
 import SearchBar from "./SearchBar";
 import SearchNav from "./SearchNav";
@@ -100,10 +100,13 @@ class App extends Component {
             onBeerSubmit={this.handleTermSubmit}
             getCategories={this.getCategories}
           />
+          {/* <Route path="/" exact>
+            <Login />
+          </Route> */}
 
           <main className="site-main container col-sm-8">
             <div className="site-content">
-              <Route path="/" exact>
+              <Route path="/search" exact>
                 <SearchBar
                   onBeerSubmit={this.handleTermSubmit}
                   totalResults={this.state.totalResults}
@@ -116,7 +119,6 @@ class App extends Component {
                 />
 
                 <BeerList beers={this.state.beers} />
-
                 <Pagination
                   currentPage={this.state.currentPage}
                   numberOfPages={this.state.numberOfPages}
@@ -136,6 +138,9 @@ class App extends Component {
                   random={this.state.randomBeer}
                   getRandomBeer={this.getRandomBeer}
                 />
+              </Route>
+              <Route path="/map">
+                <Map />
               </Route>
             </div>
           </main>

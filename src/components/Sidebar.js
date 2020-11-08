@@ -23,6 +23,10 @@ class Sidebar extends Component {
         <div className="sidebar-title">
           <h1>BEER ME</h1>
           <h6>discover new brews</h6>
+
+          {/* <NavLink exact to="/" className="nav-link" activeClassName="active">
+            <i className="fa fa-user"></i>Login
+          </NavLink> */}
         </div>
 
         <nav>
@@ -30,7 +34,7 @@ class Sidebar extends Component {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/"
+                to="/search"
                 className="nav-link"
                 activeClassName="active"
               >
@@ -76,6 +80,7 @@ class Sidebar extends Component {
             </li>
           </ul>
         </nav>
+        <div className="login-logout">Login | Logout</div>
       </div>
     );
   }

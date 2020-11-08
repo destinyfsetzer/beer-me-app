@@ -12,6 +12,10 @@
   min-height: 100vh;
 }
 
+/* Login Logout */
+.login-logout {
+  padding: 0px 0px 20px 40px;
+}
 /* Beer School Scroll */
 .beer-school {
   padding: 20px 30px 20px 30px;
@@ -322,7 +326,7 @@ tbody tr:nth-child(even) {
 }
 
 .card {
-  border: 0;
+  border: 3px;
 }
 
 .card-body {

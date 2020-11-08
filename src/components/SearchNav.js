@@ -21,7 +21,7 @@ class SearchNav extends Component {
 
     const beerTypesList = beerTypes.map((beerType, index) => (
       <li className="list-group-item" key={index}>
-        <a href="/" data-beertype={beerType} onClick={this.setBeerType}>
+        <a href="/search" data-beertype={beerType} onClick={this.setBeerType}>
           {beerType}
         </a>
       </li>

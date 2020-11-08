@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Paper } from "@material-ui/core";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 
 const BeerSchool = () => {
   return (
@@ -104,8 +104,10 @@ const BeerSchool = () => {
             </li>
           </ul>
           <p>
-            Now that you have some background, onto the
-            <a href="/"> BEERS!</a>
+            <h5>
+              Now that you have some background, onto the
+              <a href="/"> BEERS!</a>
+            </h5>
           </p>
         </div>
       </Paper>
