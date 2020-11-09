@@ -1,15 +1,22 @@
+import { Container } from "@material-ui/core";
 import React, { Component } from "react";
 import Iframe from "react-iframe";
 
 class Map extends Component {
   render() {
     return (
-      // Important! Always set the container height explicitly
-      <Iframe
-        src="https://www.google.com/maps/d/embed?mid=1igis_otRJcmImVrGoOvEEp4mwrMt7Eui"
-        width="640"
-        height="480"
-      ></Iframe>
+      <Container>
+        <Iframe
+          src="https://beermapping.com/?lat=30.26715&lon=-97.74306&z=13"
+          width="800"
+          height="600"
+          frameborder="0"
+          style="border:0;"
+          allowfullscreen=""
+          aria-hidden=""
+          tabindex="0"
+        ></Iframe>
+      </Container>
     );
   }
 }
