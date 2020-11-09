@@ -25,7 +25,7 @@ class RandomBeer extends Component {
           className="refresh-button btn mb-1"
           onClick={() => this.getRandomBeer()}
         >
-          <i className="fas fa-sync"></i>New Random Beer
+          <i className="fas fa-sync"></i>Random Beer
         </button>
 
         <div className="card mt-2" key={random.id}>
