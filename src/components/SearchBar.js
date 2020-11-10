@@ -28,7 +28,7 @@ class SearchBar extends Component {
               onChange={this.handleInputChange}
               className="form-control form-control-lg"
               placeholder="search for a beer..."
-              aria-label="ex: guinness"
+              aria-label="ex: 'Murican Pilsner"
             />
           </div>
         </form>

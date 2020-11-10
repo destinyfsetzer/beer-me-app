@@ -1,5 +1,8 @@
+import { FavoriteBorder } from "@material-ui/icons";
 import React, { Component } from "react";
 import placeholderImage from "../images/placeholder-beer.png";
+// import FavoriteIcon from "@material-ui/icons/Favorite";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 
 class BeerItem extends Component {
   constructor(props) {
@@ -22,7 +25,7 @@ class BeerItem extends Component {
 
     const showDetails = (event) => {
       event.preventDefault();
-      this.beerRef.current.cells[3].classList.add("beerItem__details--is-open"); // refactor
+      this.beerRef.current.cells[3].classList.add("beerItem__details--is-open");
     };
 
     return (
@@ -36,13 +39,12 @@ class BeerItem extends Component {
           <span className={beerAbvStyles}>{beerAbv}</span>
           <span className="beer-style">{beerStyle}</span>
         </td>
-
         <td className={beerLinkStyle}>
           <a href="/" onClick={showDetails} className="btn btn-light btn-sm">
             View Details
           </a>
         </td>
-
+        <FavoriteBorderIcon />
         <td className="beerItem__details">
           <p>{beer.description}</p>
         </td>

@@ -7,17 +7,13 @@ class RandomBeer extends Component {
 
   render() {
     const { random } = this.props;
-    let beerDescription =
-      random.style !== undefined ? random.style.description : "";
     let beerAbv = random.abv !== undefined ? `ABV: ${random.abv}%` : "";
     let beerCategoryDescription =
       random.style !== undefined
-        ? `Category Description: ${random.style.description}`
+        ? `Description: ${random.style.description}`
         : "";
     let beerCategory =
-      random.style !== undefined
-        ? `Category: ${random.style.category.name}`
-        : "";
+      random.style !== undefined ? `Style: ${random.style.category.name}` : "";
 
     return (
       <div className="random-container">
@@ -31,7 +27,6 @@ class RandomBeer extends Component {
         <div className="card mt-2" key={random.id}>
           <div className="card-body">
             <h4>{random.nameDisplay}</h4>
-            <p>{beerDescription}</p>
             <p>{beerAbv}</p>
 
             <p>{beerCategory}</p>

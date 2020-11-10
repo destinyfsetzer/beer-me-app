@@ -42,7 +42,7 @@ class Sidebar extends Component {
               </NavLink>
             </li>
 
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <NavLink
                 to="/beer-categories"
                 activeClassName="active"
@@ -51,7 +51,7 @@ class Sidebar extends Component {
               >
                 <i className="fas fa-list"></i>Categories
               </NavLink>
-            </li>
+            </li> */}
 
             <li className="nav-item">
               <NavLink

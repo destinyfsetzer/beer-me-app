@@ -304,7 +304,7 @@ tbody tr:nth-child(even) {
 }
 
 .beer-abv {
-  background: #e6e6e6;
+  background: #333333;
   display: inline-block;
   border-radius: 2px;
   position: relative;

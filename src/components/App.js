@@ -9,12 +9,11 @@ import BeerList from "./BeerList";
 import CategoryList from "./CategoryList";
 import RandomBeer from "./RandomBeer";
 import "../css/Main.css";
-
+import Login from "./Login";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import BeerSchool from "./BeerSchool";
 
 class App extends Component {
-  // initialize state with properties
   state = {
     beers: null,
     currentPage: 1,
@@ -100,9 +99,9 @@ class App extends Component {
             onBeerSubmit={this.handleTermSubmit}
             getCategories={this.getCategories}
           />
-          {/* <Route path="/" exact>
+          <Route path="/" exact>
             <Login />
-          </Route> */}
+          </Route>
 
           <main className="site-main container col-sm-8">
             <div className="site-content">

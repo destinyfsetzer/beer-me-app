@@ -17,7 +17,24 @@ class SearchNav extends Component {
   };
 
   render() {
-    const beerTypes = ["Ale", "IPA", "Lager", "Malt", "Porter", "Stout"];
+    const beerTypes = [
+      "Ale",
+      "Lager",
+      "IPA",
+      "Pilsner",
+      "Amber",
+      "Porter",
+      "Stout",
+      "Kolsch",
+      "Sour Ale",
+      "Blonde Ale",
+      "Pale Ale",
+      "Brown Ale",
+      "Saison",
+      "Gose",
+      "Helles",
+      "Scotch Ale",
+    ];
 
     const beerTypesList = beerTypes.map((beerType, index) => (
       <li className="list-group-item" key={index}>
