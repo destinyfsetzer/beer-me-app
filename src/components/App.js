@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import brewery from "../api/Proxy";
-import Map from "./Map";
+import Match from "./Match";
 import Sidebar from "./Sidebar";
 import SearchBar from "./SearchBar";
 import SearchNav from "./SearchNav";
@@ -138,8 +138,8 @@ class App extends Component {
                   getRandomBeer={this.getRandomBeer}
                 />
               </Route>
-              <Route path="/map">
-                <Map />
+              <Route path="/match">
+                <Match />
               </Route>
             </div>
           </main>

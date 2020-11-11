@@ -1,7 +1,6 @@
 import React from "react";
 import CategoryItem from "./CategoryItem";
 
-// destructure out the categories property
 const CategoryList = ({ categories }) => {
   // map over categories array
   const renderedList = categories.map((category) => {

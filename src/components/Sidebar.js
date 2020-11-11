@@ -74,8 +74,21 @@ class Sidebar extends Component {
             </li>
 
             <li className="nav-item">
-              <NavLink to="/map" className="nav-link" activeClassName="active">
-                <i className="fas fa-info-circle"></i>Brewery Map
+              <NavLink
+                to="/match"
+                className="nav-link"
+                activeClassName="active"
+              >
+                <i className="fas fa-question"></i>Beer Matcher
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to="/favorites"
+                className="nav-link"
+                activeClassName="active"
+              >
+                <i className="fa fa-bookmark"></i>Favorites
               </NavLink>
             </li>
           </ul>

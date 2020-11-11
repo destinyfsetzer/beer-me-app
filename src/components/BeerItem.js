@@ -1,4 +1,4 @@
-import { FavoriteBorder } from "@material-ui/icons";
+// import { FavoriteBorder } from "@material-ui/icons";
 import React, { Component } from "react";
 import placeholderImage from "../images/placeholder-beer.png";
 // import FavoriteIcon from "@material-ui/icons/Favorite";
