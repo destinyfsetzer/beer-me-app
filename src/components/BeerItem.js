@@ -45,6 +45,7 @@ class BeerItem extends Component {
           </a>
         </td>
         <FavoriteBorderIcon />
+
         <td className="beerItem__details">
           <p>{beer.description}</p>
         </td>

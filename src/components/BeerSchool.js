@@ -5,8 +5,19 @@ import { Container, Paper } from "@material-ui/core";
 const BeerSchool = () => {
   return (
     <Container>
-      <Paper style={{ maxHeight: 650, overflow: "auto" }}>
+      <Paper
+        style={{
+          marginBottom: 20,
+          maxHeight: 650,
+          overflow: "auto",
+        }}
+      >
         <div className="beer-school">
+          <img
+            className="beer-header"
+            alt="beer banner"
+            src="https://i.ibb.co/B6ZB9Rm/photo-1492955509702-333ba94989e0.jpg"
+          />
           <h2>BEER GUIDE FOR THE NON BEER DRINKER</h2>
           <p>
             Forget all you think you know about beer. Here are five common
@@ -84,6 +95,11 @@ const BeerSchool = () => {
             lagers take much longer to ferment (up to 6 to 8 weeks) because they
             are cold fermented.
           </p>
+          <img
+            className="beer-header"
+            alt="lager-ale"
+            src="https://qph.fs.quoracdn.net/main-qimg-c3abc0856c695674fe4552237c50d871"
+          />
           <p>
             The Bottom Line: All beer is either an ale or a lager. This is not
             determined by color, flavor or alcohol strength, but by the

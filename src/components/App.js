@@ -12,6 +12,7 @@ import "../css/Main.css";
 import Login from "./Login";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import BeerSchool from "./BeerSchool";
+import FavoritesPage from "./FavoritesPage";
 
 class App extends Component {
   state = {
@@ -140,6 +141,9 @@ class App extends Component {
               </Route>
               <Route path="/match">
                 <Match />
+              </Route>
+              <Route path="/favorites">
+                <FavoritesPage />
               </Route>
             </div>
           </main>

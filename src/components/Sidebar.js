@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import logo from "../images/beer-me-logo.png";
 
 class Sidebar extends Component {
   state = { term: "" };
@@ -18,11 +19,11 @@ class Sidebar extends Component {
   };
 
   render() {
+    let logoImage = logo;
     return (
       <div className="sidebar col-sm-3 p-0">
         <div className="sidebar-title">
-          <h1>BEER ME</h1>
-          <h6>discover new brews</h6>
+          <img className="logo" src={logoImage} alt="beer-logo" />
 
           {/* <NavLink exact to="/" className="nav-link" activeClassName="active">
             <i className="fa fa-user"></i>Login

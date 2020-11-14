@@ -5,11 +5,20 @@
   Light Black:  #333333;
   Black:        #000000;
   Red:          #D54C3F;
+  Burnt Orange: #9C5747;
 */
+
+/* Logo */
+.logo {
+  width: 250px;
+  height: 250px;
+  text-align: center;
+}
 
 /* Root */
 .root {
   min-height: 100vh;
+  /* background-image: url("https://images.unsplash.com/photo-1536584979139-dde0784c7c75?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"); */
 }
 
 /* Login Logout */
@@ -19,6 +28,19 @@
 /* Beer School Scroll */
 .beer-school {
   padding: 20px 30px 20px 30px;
+}
+
+.beer-header {
+  padding-bottom: 20px;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.lager-ale {
+  text-align: center;
 }
 
 /* Content Area */
@@ -77,12 +99,12 @@
 }
 
 .sidebar-title {
-  padding: 3rem;
+  padding: 1rem;
 }
 
 .sidebar nav {
   margin-bottom: auto;
-  padding: 5rem 0;
+  padding: 1rem 0;
 }
 
 .sidebar .nav-link {
