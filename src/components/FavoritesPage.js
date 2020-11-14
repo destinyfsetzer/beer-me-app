@@ -69,7 +69,7 @@ export default function RecipeReviewCard() {
           </CardContent>
           <CardActions disableSpacing>
             <IconButton aria-label="add to favorites">
-              <FavoriteIcon />
+              <FavoriteIcon style={{ color: "red" }} />
             </IconButton>
           </CardActions>
         </Card>
@@ -87,7 +87,7 @@ export default function RecipeReviewCard() {
           </CardContent>
           <CardActions disableSpacing>
             <IconButton aria-label="add to favorites">
-              <FavoriteIcon />
+              <FavoriteIcon style={{ color: "red" }} />
             </IconButton>
           </CardActions>
         </Card>
@@ -105,7 +105,7 @@ export default function RecipeReviewCard() {
           </CardContent>
           <CardActions disableSpacing>
             <IconButton aria-label="add to favorites">
-              <FavoriteIcon />
+              <FavoriteIcon style={{ color: "red" }} />
             </IconButton>
           </CardActions>
         </Card>
@@ -123,7 +123,7 @@ export default function RecipeReviewCard() {
           </CardContent>
           <CardActions disableSpacing>
             <IconButton aria-label="add to favorites">
-              <FavoriteIcon />
+              <FavoriteIcon style={{ color: "red" }} />
             </IconButton>
           </CardActions>
         </Card>

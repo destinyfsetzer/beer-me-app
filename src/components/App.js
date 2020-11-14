@@ -22,6 +22,7 @@ class App extends Component {
     totalResults: 0,
     categories: [],
     randomBeer: [],
+    favorites: [],
   };
 
   componentDidMount = async () => {
@@ -100,12 +101,12 @@ class App extends Component {
             onBeerSubmit={this.handleTermSubmit}
             getCategories={this.getCategories}
           />
-          <Route path="/" exact>
-            <Login />
-          </Route>
 
           <main className="site-main container col-sm-8">
             <div className="site-content">
+              <Route path="/" exact>
+                <Login />
+              </Route>
               <Route path="/search" exact>
                 <SearchBar
                   onBeerSubmit={this.handleTermSubmit}
