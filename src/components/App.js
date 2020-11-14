@@ -13,6 +13,7 @@ import Login from "./Login";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import BeerSchool from "./BeerSchool";
 import FavoritesPage from "./FavoritesPage";
+import SignUp from "./SignUp";
 
 class App extends Component {
   state = {
@@ -107,6 +108,9 @@ class App extends Component {
               <Route path="/" exact>
                 <Login />
               </Route>
+              <Route path="/SignUp" exact>
+                <SignUp />
+              </Route>
               <Route path="/search" exact>
                 <SearchBar
                   onBeerSubmit={this.handleTermSubmit}
@@ -141,7 +145,13 @@ class App extends Component {
                 />
               </Route>
               <Route path="/match">
-                <Match />
+                <Match
+                  onBeerSubmit={this.handleTermSubmit}
+                  currentPage={this.state.currentPage}
+                  getAllBeers={this.getAllBeers}
+                />
+
+                <BeerList beers={this.state.beers} />
               </Route>
               <Route path="/favorites">
                 <FavoritesPage />

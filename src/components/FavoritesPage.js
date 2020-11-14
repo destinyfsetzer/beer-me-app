@@ -11,7 +11,6 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import { FullscreenExit } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,11 +40,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function RecipeReviewCard() {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
 
   return (
     <div>

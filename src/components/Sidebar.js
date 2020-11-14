@@ -94,7 +94,6 @@ class Sidebar extends Component {
             </li>
           </ul>
         </nav>
-        <div className="login-logout">Login | Logout</div>
       </div>
     );
   }
