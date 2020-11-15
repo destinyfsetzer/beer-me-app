@@ -5,16 +5,39 @@ import Slider from "@material-ui/core/Slider";
 
 const useStyles = makeStyles({
   root: {
-    width: "60vw",
+    width: "63vw",
   },
   slider: {
     color: "#FFBD58",
+  },
+  title: {
+    color: "#632F31",
+    fontWeight: "bold",
   },
 });
 
 function valuetext(value) {
   return `${value}°C`;
 }
+
+const marks = [
+  {
+    value: 1,
+    label: "1",
+  },
+  {
+    value: 30,
+    label: "30",
+  },
+  {
+    value: 60,
+    label: "60",
+  },
+  {
+    value: 90,
+    label: "90",
+  },
+];
 
 export default function RangeSlider() {
   const classes = useStyles();
@@ -27,9 +50,9 @@ export default function RangeSlider() {
   return (
     <div className={classes.root}>
       <Typography id="range-slider" gutterBottom>
-        <h5>Bitterness:</h5> If you enjoy a hoppier beer, like an IPA, stick to
-        brews that have a high IBU (30+). More of a light beer drinker? Look for
-        IBU’s with a lower number (0-15).
+        <h5 className={classes.title}>Bitterness:</h5> If you enjoy a hoppier
+        beer, like an IPA, stick to brews that have a high IBU (30+). More of a
+        light beer drinker? Look for IBU’s with a lower number (0-15).
       </Typography>
       <Slider
         className={classes.slider}
@@ -40,6 +63,7 @@ export default function RangeSlider() {
         valueLabelDisplay="auto"
         aria-labelledby="range-slider"
         getAriaValueText={valuetext}
+        marks={marks}
       />
     </div>
   );

@@ -5,12 +5,31 @@ import Slider from "@material-ui/core/Slider";
 
 const useStyles = makeStyles({
   root: {
-    width: "60vw",
+    width: "63vw",
   },
   slider: {
-    color: "#FFBD58",
+    color: "#77200C",
+  },
+  title: {
+    color: "#632F31",
+    fontWeight: "bold",
   },
 });
+
+const marks = [
+  {
+    value: 2,
+    label: "2",
+  },
+  {
+    value: 20,
+    label: "20",
+  },
+  {
+    value: 40,
+    label: "40",
+  },
+];
 
 function valuetext(value) {
   return `${value}°C`;
@@ -27,20 +46,23 @@ export default function RangeSlider() {
   return (
     <div className={classes.root}>
       <Typography id="range-slider" gutterBottom>
-        <h5>SRM:</h5> This number represents the color of your beer. The SRM
-        scale measures beers that are the clearest straw color (2), to the
-        deepest black (40).
+        <h5 className={classes.title}>SRM:</h5> This number represents the color
+        of your beer. The SRM scale measures beers that are the clearest straw
+        color (2), to the deepest black (40).
       </Typography>
-      <Slider
-        className={classes.slider}
-        min={1}
-        max={40}
-        value={value}
-        onChange={handleChange}
-        valueLabelDisplay="auto"
-        aria-labelledby="range-slider"
-        getAriaValueText={valuetext}
-      />
+      <div className="slider">
+        <Slider
+          className={classes.slider}
+          min={2}
+          max={40}
+          value={value}
+          onChange={handleChange}
+          valueLabelDisplay="auto"
+          aria-labelledby="range-slider"
+          getAriaValueText={valuetext}
+          marks={marks}
+        />
+      </div>
     </div>
   );
 }

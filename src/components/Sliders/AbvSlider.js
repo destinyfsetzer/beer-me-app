@@ -5,16 +5,27 @@ import Slider from "@material-ui/core/Slider";
 
 const useStyles = makeStyles({
   root: {
-    width: "60vw",
+    width: "63vw",
   },
   slider: {
     color: "#FFBD58",
   },
+  title: {
+    color: "#632F31",
+    fontWeight: "bold",
+  },
 });
 
-function valuetext(value) {
-  return `${value}°C`;
-}
+const marks = [
+  {
+    value: 2,
+    label: "2%",
+  },
+  {
+    value: 16,
+    label: "16%",
+  },
+];
 
 export default function RangeSlider() {
   const classes = useStyles();
@@ -27,8 +38,8 @@ export default function RangeSlider() {
   return (
     <div className={classes.root}>
       <Typography id="range-slider" gutterBottom>
-        <h5>Alcohol By Volume: </h5>Takin it easy: try 2-5% abv | Average: try
-        5-8% | Party Time: 8-16%
+        <h5 className={classes.title}>Alcohol By Volume: </h5>Takin it easy: try
+        2-5% abv | Average: try 5-8% | Party Time: 8-16%
       </Typography>
 
       <Slider
@@ -39,7 +50,7 @@ export default function RangeSlider() {
         onChange={handleChange}
         valueLabelDisplay="auto"
         aria-labelledby="range-slider"
-        getAriaValueText={valuetext}
+        marks={marks}
       />
     </div>
   );

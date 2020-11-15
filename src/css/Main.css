@@ -94,7 +94,7 @@
   justify-content: center;
   flex-direction: column;
   background: #f4f4f4;
-  max-width: 300px;
+  max-width: 250px;
   display: flex;
 }
 
@@ -384,4 +384,19 @@ tbody tr:nth-child(even) {
 .pagination .page-item.disabled .page-link {
   border-color: #6c757d;
   opacity: 0.8;
+}
+
+/* Sliders */
+
+.slider {
+  background: #e6e5ea;
+  background-image: linear-gradient(
+    to right,
+    #fde994 10%,
+    #7a210b 45%,
+    #240c0d 99%
+  );
+  position: relative;
+  max-height: 15px;
+  margin-bottom: 30px;
 }

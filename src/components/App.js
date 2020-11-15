@@ -145,13 +145,13 @@ class App extends Component {
                 />
               </Route>
               <Route path="/match">
-                <Match
-                  onBeerSubmit={this.handleTermSubmit}
-                  currentPage={this.state.currentPage}
-                  getAllBeers={this.getAllBeers}
-                />
-
+                <Match />
                 <BeerList beers={this.state.beers} />
+                <Pagination
+                  currentPage={this.state.currentPage}
+                  numberOfPages={this.state.numberOfPages}
+                  onPageSubmit={this.handlePagination}
+                />
               </Route>
               <Route path="/favorites">
                 <FavoritesPage />
