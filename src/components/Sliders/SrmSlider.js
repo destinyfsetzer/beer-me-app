@@ -8,7 +8,7 @@ const useStyles = makeStyles({
     width: "63vw",
   },
   slider: {
-    color: "#77200C",
+    color: "#FFBD58",
   },
   title: {
     color: "#632F31",

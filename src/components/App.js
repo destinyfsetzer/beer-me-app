@@ -18,6 +18,7 @@ import SignUp from "./SignUp";
 class App extends Component {
   state = {
     beers: null,
+    filterBeers: null,
     currentPage: 1,
     numberOfPages: "",
     totalResults: 0,
@@ -33,6 +34,7 @@ class App extends Component {
 
     this.setState({
       beers: response.data.data,
+      filterBeers: response.data.data,
       currentPage: response.data.currentPage,
       numberOfPages: response.data.numberOfPages,
       totalResults: response.data.totalResults,
