@@ -30,9 +30,6 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3, 0, 2),
     backgroundColor: "#605948",
   },
-  SignUp: {
-    color: "#605948",
-  },
 }));
 
 export default function SignUp() {

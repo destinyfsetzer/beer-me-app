@@ -27,7 +27,7 @@ Burnt Orange: #9C5747; */
 /* Root */
 .root {
   min-height: 100vh;
-  font-family: "franklin-gothic-urw-comp", sans-serif;
+  /* font-family: "franklin-gothic-urw-comp", sans-serif; */
   background-color: #fff;
   /* background-image: url("https://images.unsplash.com/photo-1536584979139-dde0784c7c75?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"); */
 }
@@ -383,6 +383,7 @@ tbody tr:nth-child(even) {
 .randoCard {
   background-color: #eeebe0;
 }
+
 .card {
   border: 3px;
 }
