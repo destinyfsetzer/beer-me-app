@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../images/beer-me-logo.png";
+import logo from "../images/logo-brown.png";
 
 class Sidebar extends Component {
   state = { term: "" };

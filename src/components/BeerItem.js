@@ -41,7 +41,7 @@ class BeerItem extends Component {
           <span className="beer-style">{beerStyle}</span>
         </td>
         <td className={beerLinkStyle}>
-          <a href="/" onClick={showDetails} className="btn btn-light btn-sm">
+          <a href="/" onClick={showDetails} className="btn btn-view btn-sm">
             View Details
           </a>
         </td>

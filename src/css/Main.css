@@ -1,3 +1,10 @@
+/* Color Scheme
+Dark Brown: #605948;
+Yellow/Orange: #D59737;
+Light Tan: #F6F3EC;
+Medium Tan: #EEEBE0;  */
+
+/* Alternate Color Scheme */
 /*
   Yellow:       #f4b233
   Dark Yellow:  #D06F1A;
@@ -31,7 +38,7 @@
 }
 
 h2 {
-  color: #632f31;
+  color: #605948;
 }
 
 .beer-header {
@@ -83,7 +90,7 @@ h2 {
 }
 
 .spinner-border {
-  color: #f4b233;
+  color: #d59737;
 }
 
 /* Header */
@@ -97,7 +104,7 @@ h2 {
   box-shadow: 5px 0px 10px #ececec;
   justify-content: center;
   flex-direction: column;
-  background: #f4f4f4;
+  background: #f6f3ec;
   max-width: 250px;
   display: flex;
 }
@@ -115,20 +122,20 @@ h2 {
   transition: 0.2s ease all;
   font-weight: normal;
   padding: 0.8rem 3rem;
-  color: #333;
+  color: #605948;
 }
 
 .sidebar .nav-link:hover {
-  background: #ececec;
+  background: #f6f3ec;
 }
 
 .nav-item .nav-link.active {
   background: #fff;
-  color: #f4b233;
+  color: #d59737;
 }
 
 .nav-item .nav-link.active i {
-  color: #f4b233;
+  color: #d59737;
 }
 
 .sidebar .nav-item {
@@ -136,7 +143,7 @@ h2 {
 }
 
 .sidebar .nav-link i {
-  color: #333;
+  color: #605948;
 }
 
 .list-group {
@@ -150,16 +157,27 @@ h2 {
 }
 
 .list-group-item a {
-  color: #888888;
+  color: #605948;
 }
 
 .list-group .btn-sm {
   font-size: 0.8rem;
+  background-color: #eeebe0;
+}
+
+.btn-view {
+  background-color: #f6f3ec;
+  color: #605948;
+}
+
+.btn .btn-light .btn-sm {
+  background-color: white;
 }
 
 /* Search */
 .search-bar__title {
   display: inline-block;
+  color: #605948;
 }
 
 .total-results {
@@ -173,12 +191,13 @@ h2 {
   font-size: 18px;
   margin: 0 0 10px;
   display: flex;
+  border: 2px solid #c3b9a1;
 }
 
 /* Search Nav */
 .search-nav .list-group-item button {
   background: none;
-  color: #888888;
+  color: #d59737;
   padding: 0;
   border: 0;
 }
@@ -215,21 +234,21 @@ table tbody::-webkit-scrollbar {
 
 /* Track */
 table tbody::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #f6f3ec;
 }
 
 /* Handle */
 table tbody::-webkit-scrollbar-thumb {
-  background: #dfe0e0;
+  background: #f6f3ec;
 }
 
 /* Handle on hover */
 table tbody::-webkit-scrollbar-thumb:hover {
-  background: #dfe0e0;
+  background: #f6f3ec;
 }
 
 table tbody tr {
-  border-top: 1px solid #e2e0e0;
+  border-top: 1px solid #f6f3ec;
   background: none;
 }
 
@@ -238,7 +257,7 @@ table tbody tr td {
 }
 
 tbody tr:nth-child(even) {
-  background: none;
+  background: #fff;
 }
 
 .beer-list {
@@ -255,6 +274,7 @@ tbody tr:nth-child(even) {
 
 .beerItem {
   justify-content: space-between;
+  background-color: #fff;
   transition: 0.15s ease all;
   align-items: center;
   flex-flow: row wrap;
@@ -264,7 +284,7 @@ tbody tr:nth-child(even) {
 }
 
 .beerItem:hover {
-  box-shadow: -5px 10px 20px #f3f2f2;
+  box-shadow: -5px 10px 20px #f6f3ec;
   border-top: 1px solid transparent;
   background: #ffff;
 }
@@ -322,15 +342,16 @@ tbody tr:nth-child(even) {
   margin-right: 10px;
   font-weight: bold;
   font-size: 18px;
+  color: #605948;
 }
 
 .beer-style {
-  color: #888888;
+  color: #605948;
   display: block;
 }
 
 .beer-abv {
-  background: #333333;
+  background: #605948;
   display: inline-block;
   border-radius: 2px;
   position: relative;
@@ -345,10 +366,10 @@ tbody tr:nth-child(even) {
 
 /* Random Beer */
 .refresh-button {
-  background-color: #f4b233;
-  border-color: #f4b233;
+  background-color: #d59737;
+  border-color: #d59737;
   font-weight: 500;
-  color: #000;
+  color: #eeebe0;
 }
 
 .card {
@@ -374,26 +395,26 @@ tbody tr:nth-child(even) {
 }
 
 .pagination .page-link {
-  background-color: #f4b233;
-  border-color: #f4b233;
+  background-color: #d59737;
+  border-color: #d59737;
   font-size: 0.85rem;
   color: #fff;
 }
 
 .pagination .page-link:hover {
-  color: #fff;
+  color: #f6f3ec;
   opacity: 0.9;
 }
 
 .pagination .page-item.disabled .page-link {
-  border-color: #6c757d;
+  border-color: #eeebe0;
   opacity: 0.8;
 }
 
 /* Sliders */
 
 .slider {
-  background: #e6e5ea;
+  background: #f6f3ec;
   background-image: linear-gradient(
     to right,
     #fde994 10%,
