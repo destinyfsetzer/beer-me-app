@@ -2,7 +2,9 @@
 Dark Brown: #605948;
 Yellow/Orange: #D59737;
 Light Tan: #F6F3EC;
-Medium Tan: #EEEBE0;  */
+Medium Tan: #EEEBE0;
+Red: #D54C3F;
+Burnt Orange: #9C5747; */
 
 /* Alternate Color Scheme */
 /*
@@ -25,6 +27,8 @@ Medium Tan: #EEEBE0;  */
 /* Root */
 .root {
   min-height: 100vh;
+  font-family: "franklin-gothic-urw-comp", sans-serif;
+  background-color: #fff;
   /* background-image: url("https://images.unsplash.com/photo-1536584979139-dde0784c7c75?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"); */
 }
 
@@ -32,6 +36,12 @@ Medium Tan: #EEEBE0;  */
 .login-logout {
   padding: 0px 0px 20px 40px;
 }
+
+.login-form {
+  padding: 5px;
+  border-radius: 5px;
+}
+
 /* Beer School Scroll */
 .beer-school {
   padding: 10px 30px 10px 30px;
@@ -43,7 +53,6 @@ h2 {
 
 .beer-header {
   padding-bottom: 20px;
-
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -63,8 +72,7 @@ h2 {
 
 /* Site Main */
 .site-main {
-  padding: 40px 16px;
-  margin: 0 auto;
+  padding: 5%;
 }
 
 /* Buttons */
@@ -104,7 +112,7 @@ h2 {
   box-shadow: 5px 0px 10px #ececec;
   justify-content: center;
   flex-direction: column;
-  background: #f6f3ec;
+  background: #eeebe0;
   max-width: 250px;
   display: flex;
 }
@@ -234,12 +242,12 @@ table tbody::-webkit-scrollbar {
 
 /* Track */
 table tbody::-webkit-scrollbar-track {
-  background: #f6f3ec;
+  background: #c3b9a1;
 }
 
 /* Handle */
 table tbody::-webkit-scrollbar-thumb {
-  background: #f6f3ec;
+  background: #605948;
 }
 
 /* Handle on hover */
@@ -372,6 +380,9 @@ tbody tr:nth-child(even) {
   color: #eeebe0;
 }
 
+.randoCard {
+  background-color: #eeebe0;
+}
 .card {
   border: 3px;
 }

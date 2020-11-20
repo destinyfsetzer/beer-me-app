@@ -7,9 +7,8 @@ const BeerSchool = () => {
     <Container>
       <Paper
         style={{
-          marginBottom: 20,
-          maxHeight: 600,
-          margin: "0px 0 0 0px",
+          maxHeight: "90vh",
+          width: "65vw",
           overflow: "auto",
         }}
       >

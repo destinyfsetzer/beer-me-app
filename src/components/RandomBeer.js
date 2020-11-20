@@ -24,7 +24,7 @@ class RandomBeer extends Component {
           <i className="fas fa-random"></i>Random Beer
         </button>
 
-        <div className="card mt-2" key={random.id}>
+        <div className="card mt-2 randoCard" key={random.id}>
           <div className="card-body">
             <h4 className="beer-name">{random.nameDisplay}</h4>
             <p className="badge beer-abv">{beerAbv}</p>

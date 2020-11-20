@@ -22,15 +22,19 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: "#FFBD58",
+    backgroundColor: "#D59737",
   },
   form: {
     width: "100%", // Fix IE 11 issue.
     marginTop: theme.spacing(1),
+    color: "#D59737",
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
-    backgroundColor: "black",
+    backgroundColor: "#605948",
+  },
+  login: {
+    color: "#605948",
   },
 }));
 
@@ -38,13 +42,13 @@ export default function SignIn() {
   const classes = useStyles();
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="xs" className="login-form">
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography component="h1" variant="h5">
+        <Typography className={classes.login} component="h1" variant="h5">
           Sign in
         </Typography>
         <form className={classes.form} noValidate>
@@ -85,12 +89,12 @@ export default function SignIn() {
           </Button>
           <Grid container>
             <Grid item xs>
-              <Link href="#" variant="body2">
+              <Link href="#" className={classes.form} variant="body2">
                 Forgot password?
               </Link>
             </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="#" className={classes.form} variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>
