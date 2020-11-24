@@ -40,7 +40,7 @@ class Match extends Component {
     ];
 
     const beerTypesList = beerTypes.map((beerType, index) => (
-      <li className="list-group-item" key={index}>
+      <li className="list-group-item match" key={index}>
         <a href="/search" data-beertype={beerType} onClick={this.setBeerType}>
           {/* {beerType} */}
         </a>

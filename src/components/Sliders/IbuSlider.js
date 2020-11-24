@@ -5,13 +5,14 @@ import Slider from "@material-ui/core/Slider";
 
 const useStyles = makeStyles({
   root: {
-    width: "63vw",
+    width: "56vw",
   },
   slider: {
     color: "#FFBD58",
   },
   title: {
-    color: "#632F31",
+    color: "#605948",
+    fontSize: "15px",
     fontWeight: "bold",
   },
 });
@@ -50,9 +51,12 @@ export default function RangeSlider() {
   return (
     <div className={classes.root}>
       <Typography id="range-slider" gutterBottom>
-        <h5 className={classes.title}>Bitterness:</h5> If you enjoy a hoppier
-        beer, like an IPA, stick to brews that have a high IBU (30+). More of a
-        light beer drinker? Look for IBU’s with a lower number (0-15).
+        <h5 className={classes.title}>Bitterness:</h5>
+        <h6>
+          If you enjoy a hoppier beer, like an IPA, stick to brews that have a
+          high IBU (30+). More of a light beer drinker? Look for IBU’s with a
+          lower number (0-15).{" "}
+        </h6>
       </Typography>
       <Slider
         className={classes.slider}

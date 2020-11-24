@@ -110,7 +110,7 @@ class App extends Component {
               <Route path="/" exact>
                 <Login />
               </Route>
-              <Route path="/SignUp" exact>
+              <Route path="/signup" exact>
                 <SignUp />
               </Route>
               <Route path="/search" exact>

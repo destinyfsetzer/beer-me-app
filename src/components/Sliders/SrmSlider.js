@@ -5,13 +5,14 @@ import Slider from "@material-ui/core/Slider";
 
 const useStyles = makeStyles({
   root: {
-    width: "63vw",
+    width: "56vw",
   },
   slider: {
     color: "#FFBD58",
   },
   title: {
-    color: "#632F31",
+    color: "#605948",
+    fontSize: "15px",
     fontWeight: "bold",
   },
 });
@@ -46,9 +47,12 @@ export default function RangeSlider() {
   return (
     <div className={classes.root}>
       <Typography id="range-slider" gutterBottom>
-        <h5 className={classes.title}>SRM:</h5> This number represents the color
-        of your beer. The SRM scale measures beers that are the clearest straw
-        color (2), to the deepest black (40).
+        <h5 className={classes.title}>SRM:</h5>
+        <h6>
+          This number represents the color of your beer. The SRM scale measures
+          beers that are the clearest straw color (2), to the deepest black
+          (40).{" "}
+        </h6>
       </Typography>
       <div className="slider">
         <Slider

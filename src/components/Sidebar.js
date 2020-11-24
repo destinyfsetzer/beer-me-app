@@ -24,15 +24,19 @@ class Sidebar extends Component {
       <div className="sidebar col-sm-3 p-0">
         <div className="sidebar-title">
           <img className="logo" src={logoImage} alt="beer-logo" />
-
-          {/* <NavLink exact to="/" className="nav-link" activeClassName="active">
-            <i className="fa fa-user"></i>Login
-          </NavLink> */}
         </div>
 
         <nav>
           <ul className="nav flex-column">
             <li className="nav-item">
+              <NavLink
+                exact
+                to="/"
+                className="nav-link"
+                activeClassName="active"
+              >
+                <i className="fa fa-user"></i>Login
+              </NavLink>
               <NavLink
                 exact
                 to="/search"

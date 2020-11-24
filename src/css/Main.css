@@ -115,6 +115,7 @@ h2 {
   background: #eeebe0;
   max-width: 250px;
   display: flex;
+  position: static;
 }
 
 .sidebar-title {
@@ -247,7 +248,7 @@ table tbody::-webkit-scrollbar-track {
 
 /* Handle */
 table tbody::-webkit-scrollbar-thumb {
-  background: #605948;
+  background: #f6f3ec;
 }
 
 /* Handle on hover */

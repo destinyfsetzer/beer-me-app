@@ -37,6 +37,7 @@ export default function SignUp() {
 
   return (
     <Container component="main" maxWidth="xs">
+      <h2>Good choice!</h2>
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
@@ -105,7 +106,7 @@ export default function SignUp() {
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <Link href="#" className={classes.form} variant="body2">
+              <Link href="/" className={classes.form} variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>
