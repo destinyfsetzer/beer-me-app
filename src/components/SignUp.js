@@ -1,14 +1,16 @@
-import React from "react";
-import Avatar from "@material-ui/core/Avatar";
-import Button from "@material-ui/core/Button";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import TextField from "@material-ui/core/TextField";
-import Link from "@material-ui/core/Link";
-import Grid from "@material-ui/core/Grid";
+import React, { useState, useRef } from "react";
+import {
+  Avatar,
+  makeStyles,
+  Button,
+  CssBaseline,
+  TextField,
+  Grid,
+  Typography,
+  Container,
+} from "@material-ui/core";
+import { Link } from "react-router-dom";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -34,6 +36,66 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignUp() {
   const classes = useStyles();
+  const [firstName, setFirstName] = useState(null);
+  const [lastName, setLastName] = useState(null);
+  const [email, setEmail] = useState(null);
+  const [userName, setUserName] = useState(null);
+  const [password, setPassword] = useState(null);
+
+  const newUser = {
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    userName: userName,
+    password: password,
+  };
+
+  const handleTextChange = (evt) => {
+    if (evt.target.name === "firstName") {
+      setFirstName(evt.target.value);
+    }
+    if (evt.target.name === "lastName") {
+      setLastName(evt.target.value);
+    }
+    if (evt.target.name === "email") {
+      setEmail(evt.target.value);
+    }
+    if (evt.target.name === "userName") {
+      setUserName(evt.target.value);
+    }
+    if (evt.target.name === "password") {
+      setPassword(evt.target.value);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    (async () => {
+      const rawResponse = await fetch("/users", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          userName: userName,
+          password: password,
+        }),
+      });
+      const content = await rawResponse.json();
+      console.log("Response", content);
+    })();
+  };
+
+  let textInput1 = useRef(null);
+  let textInput2 = useRef(null);
+  let textInput3 = useRef(null);
+  let textInput4 = useRef(null);
+  let textInput5 = useRef(null);
 
   return (
     <Container component="main" maxWidth="xs">
@@ -46,10 +108,12 @@ export default function SignUp() {
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} onSubmit={handleSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
+                onChange={handleTextChange}
+                inputRef={textInput1}
                 autoComplete="fname"
                 name="firstName"
                 variant="outlined"
@@ -62,6 +126,8 @@ export default function SignUp() {
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
+                onChange={handleTextChange}
+                inputRef={textInput2}
                 variant="outlined"
                 required
                 fullWidth
@@ -73,6 +139,8 @@ export default function SignUp() {
             </Grid>
             <Grid item xs={12}>
               <TextField
+                onChange={handleTextChange}
+                inputRef={textInput3}
                 variant="outlined"
                 required
                 fullWidth
@@ -84,6 +152,21 @@ export default function SignUp() {
             </Grid>
             <Grid item xs={12}>
               <TextField
+                onChange={handleTextChange}
+                inputRef={textInput4}
+                variant="outlined"
+                required
+                fullWidth
+                name="userName"
+                label="Username"
+                type="text"
+                id="username"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                onChange={handleTextChange}
+                inputRef={textInput5}
                 variant="outlined"
                 required
                 fullWidth
@@ -101,6 +184,15 @@ export default function SignUp() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={() => {
+              setTimeout(() => {
+                textInput1.current.value = "";
+                textInput2.current.value = "";
+                textInput3.current.value = "";
+                textInput4.current.value = "";
+                textInput5.current.value = "";
+              }, 100);
+            }}
           >
             Sign Up
           </Button>

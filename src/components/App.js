@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import cookie from "cookie";
 import brewery from "../api/Proxy";
 import Match from "./Match";
 import Sidebar from "./Sidebar";
@@ -14,8 +15,10 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import BeerSchool from "./BeerSchool";
 import FavoritesPage from "./FavoritesPage";
 import SignUp from "./SignUp";
+import { checkAuth } from "./CheckAuth";
 
 class App extends Component {
+  cookies = cookie.parse(document.cookie);
   state = {
     beers: null,
     filterBeers: null,
@@ -27,6 +30,7 @@ class App extends Component {
     favorites: [],
   };
 
+  // fetch all data from api
   componentDidMount = async () => {
     const response = await brewery.get("/beers");
     const random = await brewery.get("/random");
@@ -43,6 +47,7 @@ class App extends Component {
     });
   };
 
+  // gets the beers
   getAllBeers = async () => {
     const response = await brewery.get("/beers");
 
@@ -54,6 +59,7 @@ class App extends Component {
     });
   };
 
+  //gets random beer endpoint
   getRandomBeer = async () => {
     const random = await brewery.get("/random");
 
@@ -62,6 +68,7 @@ class App extends Component {
     });
   };
 
+  //gets beer categories
   getCategories = async () => {
     const categories = await brewery.get("/categories");
 
@@ -70,6 +77,7 @@ class App extends Component {
     });
   };
 
+  // search by term
   handleTermSubmit = async (term) => {
     const response = await brewery.get("/search", {
       params: {
@@ -84,6 +92,7 @@ class App extends Component {
     });
   };
 
+  // multiple page info display
   handlePagination = async (currentPage) => {
     const response = await brewery.get("/beers", {
       params: {
@@ -100,11 +109,13 @@ class App extends Component {
     return (
       <Router>
         <div className="content-area">
-          <Sidebar
-            onBeerSubmit={this.handleTermSubmit}
-            getCategories={this.getCategories}
-          />
-
+          {/* conditionally render sidebar if logged in */}
+          {checkAuth && (
+            <Sidebar
+              onBeerSubmit={this.handleTermSubmit}
+              getCategories={this.getCategories}
+            />
+          )}
           <main className="site-main container col-sm-8">
             <div className="site-content">
               <Route path="/" exact>
@@ -155,9 +166,9 @@ class App extends Component {
                   onPageSubmit={this.handlePagination}
                 />
               </Route>
-              <Route path="/favorites">
+              {/* <Route path="/favorites">
                 <FavoritesPage />
-              </Route>
+              </Route> */}
             </div>
           </main>
         </div>

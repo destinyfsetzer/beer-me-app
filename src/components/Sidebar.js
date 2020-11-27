@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../images/logo-brown.png";
+// import { checkAuth } from "./CheckAuth";
 
 class Sidebar extends Component {
   state = { term: "" };
@@ -29,14 +30,6 @@ class Sidebar extends Component {
         <nav>
           <ul className="nav flex-column">
             <li className="nav-item">
-              <NavLink
-                exact
-                to="/"
-                className="nav-link"
-                activeClassName="active"
-              >
-                <i className="fa fa-user"></i>Login
-              </NavLink>
               <NavLink
                 exact
                 to="/search"
@@ -87,13 +80,29 @@ class Sidebar extends Component {
                 <i className="fas fa-question"></i>Beer Matcher
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink
+            {/* <li className="nav-item"> */}
+            {/* <NavLink
                 to="/favorites"
                 className="nav-link"
                 activeClassName="active"
               >
                 <i className="fa fa-bookmark"></i>Favorites
+              </NavLink> */}
+            {/* </li> */}
+            <li
+              onClick={() => {
+                document.cookie = "loggedIn=";
+                window.location.replace("/");
+              }}
+              className="nav-item"
+            >
+              <NavLink
+                exact
+                to="/"
+                className="nav-link"
+                activeClassName="active"
+              >
+                <i className="fa fa-user"></i>Logout
               </NavLink>
             </li>
           </ul>

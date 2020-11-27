@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+// import { checkAuth } from "./CheckAuth"
 import {
   Avatar,
   makeStyles,
@@ -7,8 +8,6 @@ import {
   Box,
   Grid,
   Link,
-  Checkbox,
-  FormControlLabel,
   TextField,
   CssBaseline,
   Button,
@@ -40,9 +39,40 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignIn() {
+export default function Login() {
+  const [users, setUsers] = useState([]);
+  // const [redirectHome, setRedirectHome] = React.useState(false);
   const classes = useStyles();
 
+  // useEffect calls the function that will fetch data from backend and set state with response.
+  useEffect(() => {
+    callBackendAPI()
+      .then((res) => setUsers(res))
+      .catch((err) => console.log(err));
+  }, []);
+
+  // Fetches our GET route from the Express server.
+  const callBackendAPI = async () => {
+    const response = await fetch("users");
+    const body = await response.json();
+
+    if (response.status !== 200) {
+      throw Error(body.message);
+    }
+    return body;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    document.cookie = "loggedIn=true;max-age=60*1000";
+    window.location.replace("/search");
+    // props.history.push("/search");
+    // setRedirectHome(true);
+  };
+
+  // if (redirectHome) {
+  //   return <Redirect to="/search" />;
+  // }
   return (
     <Container component="main" maxWidth="xs" className="login-form">
       <CssBaseline />
@@ -53,16 +83,17 @@ export default function SignIn() {
         <Typography className={classes.login} component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} noValidate>
+        <form onSubmit={handleSubmit} className={classes.form} noValidate>
           <TextField
             variant="outlined"
             margin="normal"
             required
             fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
+            type="text"
+            id="userName"
+            label="username"
+            name="userName"
+            autoComplete="userName"
             autoFocus
           />
           <TextField
@@ -75,10 +106,6 @@ export default function SignIn() {
             type="password"
             id="password"
             autoComplete="current-password"
-          />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
           />
           <Button
             type="submit"
