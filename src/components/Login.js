@@ -53,7 +53,7 @@ export default function Login() {
 
   // Fetches our GET route from the Express server.
   const callBackendAPI = async () => {
-    const response = await fetch("http://localhost:4000/users");
+    const response = await fetch("/users");
     const body = await response.json();
 
     if (response.status !== 200) {

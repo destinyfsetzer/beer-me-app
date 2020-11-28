@@ -42,13 +42,13 @@ export default function SignUp() {
   const [userName, setUserName] = useState(null);
   const [password, setPassword] = useState(null);
 
-  const newUser = {
-    firstName: firstName,
-    lastName: lastName,
-    email: email,
-    userName: userName,
-    password: password,
-  };
+  // const newUser = {
+  //   firstName: firstName,
+  //   lastName: lastName,
+  //   email: email,
+  //   userName: userName,
+  //   password: password,
+  // };
 
   const handleTextChange = (evt) => {
     if (evt.target.name === "firstName") {
@@ -72,7 +72,7 @@ export default function SignUp() {
     e.preventDefault();
 
     (async () => {
-      const rawResponse = await fetch("http://localhost:4000/users", {
+      const rawResponse = await fetch("/users", {
         method: "POST",
         headers: {
           Accept: "application/json",
