@@ -13,7 +13,7 @@ import "../css/Main.css";
 import Login from "./Login";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import BeerSchool from "./BeerSchool";
-import FavoritesPage from "./FavoritesPage";
+// import FavoritesPage from "./FavoritesPage";
 import SignUp from "./SignUp";
 import { checkAuth } from "./CheckAuth";
 

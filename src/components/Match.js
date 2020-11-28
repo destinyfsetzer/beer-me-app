@@ -1,3 +1,5 @@
+// first attempt quiz
+
 import React, { Component } from "react";
 import IbuSlider from "./../components/Sliders/IbuSlider";
 import AbvSlider from "./../components/Sliders/AbvSlider";

@@ -72,7 +72,7 @@ export default function SignUp() {
     e.preventDefault();
 
     (async () => {
-      const rawResponse = await fetch("/users", {
+      const rawResponse = await fetch("http://localhost:4000/users", {
         method: "POST",
         headers: {
           Accept: "application/json",
