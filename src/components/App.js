@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import cookie from "cookie";
+// import cookie from "cookie";
 import brewery from "../api/Proxy";
 import Match from "./Match";
 import Sidebar from "./Sidebar";
@@ -18,7 +18,7 @@ import SignUp from "./SignUp";
 import { checkAuth } from "./CheckAuth";
 
 class App extends Component {
-  cookies = cookie.parse(document.cookie);
+  // cookies = cookie.parse(document.cookie);
   state = {
     beers: null,
     filterBeers: null,

@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 // import { checkAuth } from "./CheckAuth"
 import {
-  Avatar,
   makeStyles,
   Container,
-  Typography,
   Box,
   Grid,
   Link,
@@ -12,7 +10,7 @@ import {
   CssBaseline,
   Button,
 } from "@material-ui/core/";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import logo from "../images/logo-brown.png";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -53,7 +51,7 @@ export default function Login() {
 
   // Fetches our GET route from the Express server.
   const callBackendAPI = async () => {
-    const response = await fetch("/users");
+    const response = await fetch("users");
     const body = await response.json();
 
     if (response.status !== 200) {
@@ -77,12 +75,7 @@ export default function Login() {
     <Container component="main" maxWidth="xs" className="login-form">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography className={classes.login} component="h1" variant="h5">
-          Sign in
-        </Typography>
+        <img className="logo" src={logo} alt="beer-logo" />
         <form onSubmit={handleSubmit} className={classes.form} noValidate>
           <TextField
             variant="outlined"

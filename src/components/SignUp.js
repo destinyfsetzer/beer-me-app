@@ -72,7 +72,7 @@ export default function SignUp() {
     e.preventDefault();
 
     (async () => {
-      const rawResponse = await fetch("/users", {
+      const Response = await fetch("http://localhost:4001/users", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -86,7 +86,7 @@ export default function SignUp() {
           password: password,
         }),
       });
-      const content = await rawResponse.json();
+      const content = await Response.json();
       console.log("Response", content);
     })();
   };
