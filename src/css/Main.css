@@ -1,0 +1,440 @@
+/* Color Scheme
+Dark Brown: #605948;
+Yellow/Orange: #D59737;
+Light Tan: #F6F3EC;
+Medium Tan: #EEEBE0;
+Red: #D54C3F;
+Burnt Orange: #9C5747; */
+
+/* Alternate Color Scheme */
+/*
+  Yellow:       #f4b233
+  Dark Yellow:  #D06F1A;
+  Light Gray:   #888888;
+  Light Black:  #333333;
+  Black:        #000000;
+  Red:          #D54C3F;
+  Burnt Orange: #9C5747;
+*/
+
+/* Logo */
+.logo {
+  width: 250px;
+  height: 250px;
+  text-align: center;
+}
+
+/* Root */
+.root {
+  min-height: 100vh;
+  /* font-family: "franklin-gothic-urw-comp", sans-serif; */
+  background-color: #fff;
+  /* background-image: url("https://images.unsplash.com/photo-1536584979139-dde0784c7c75?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"); */
+}
+
+/* Login Logout */
+.login-logout {
+  padding: 0px 0px 20px 40px;
+}
+
+.login-form {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* Beer School Scroll */
+.beer-school {
+  padding: 10px 30px 10px 30px;
+}
+
+h2 {
+  color: #605948;
+}
+
+.beer-header {
+  padding-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.lager-ale {
+  text-align: center;
+}
+
+/* Content Area */
+.content-area {
+  flex-direction: row;
+  min-height: 100vh;
+  display: flex;
+}
+
+/* Site Main */
+.site-main {
+  padding: 5%;
+}
+
+/* Buttons */
+.button {
+  border-radius: 2px;
+  background-color: initial;
+}
+
+.button:hover {
+  background-color: initial;
+}
+
+/* Icons */
+.fa,
+.fas {
+  margin-right: 10px;
+}
+
+/* Spinner */
+.spinner {
+  text-align: center;
+  padding: 20px;
+}
+
+.spinner-border {
+  color: #d59737;
+}
+
+/* Header */
+.site-header {
+  background: #151515;
+  margin: 0 auto;
+}
+
+/* Sidebar */
+.sidebar {
+  box-shadow: 5px 0px 10px #ececec;
+  justify-content: center;
+  flex-direction: column;
+  background: #eeebe0;
+  max-width: 250px;
+  display: flex;
+  position: static;
+}
+
+.sidebar-title {
+  padding: 1rem;
+}
+
+.sidebar nav {
+  margin-bottom: auto;
+  padding: 1rem 0;
+}
+
+.sidebar .nav-link {
+  transition: 0.2s ease all;
+  font-weight: normal;
+  padding: 0.8rem 3rem;
+  color: #605948;
+}
+
+.sidebar .nav-link:hover {
+  background: #f6f3ec;
+}
+
+.nav-item .nav-link.active {
+  background: #fff;
+  color: #d59737;
+}
+
+.nav-item .nav-link.active i {
+  color: #d59737;
+}
+
+.sidebar .nav-item {
+  padding: 5px 0;
+}
+
+.sidebar .nav-link i {
+  color: #605948;
+}
+
+.list-group {
+  margin-bottom: 25px;
+}
+
+.list-group-item {
+  padding: 0.5rem 0.75rem;
+  background: none;
+  border: 0;
+}
+
+.list-group-item a {
+  color: #605948;
+}
+
+.list-group .btn-sm {
+  font-size: 0.8rem;
+  background-color: #eeebe0;
+}
+
+.btn-view {
+  background-color: #f6f3ec;
+  color: #605948;
+}
+
+.btn .btn-light .btn-sm {
+  background-color: white;
+}
+
+/* Search */
+.search-bar__title {
+  display: inline-block;
+  color: #605948;
+}
+
+.total-results {
+  margin-bottom: 0.5rem;
+  float: right;
+}
+
+.search-bar label {
+  justify-content: space-between;
+  flex-direction: row;
+  font-size: 18px;
+  margin: 0 0 10px;
+  display: flex;
+  border: 2px solid #c3b9a1;
+}
+
+/* Search Nav */
+.search-nav .list-group-item button {
+  background: none;
+  color: #d59737;
+  padding: 0;
+  border: 0;
+}
+
+.search-nav .list-group-item button:hover {
+  text-decoration: underline;
+}
+
+.search-nav .list-group-item button:focus {
+  outline: none;
+}
+
+/* Table */
+table {
+  border-collapse: collapse;
+  position: relative;
+}
+
+table tbody {
+  padding: 0 10px 50px 20px;
+  overflow-y: scroll;
+  /* max-height: 350px; */
+  background: none;
+  display: block;
+  height: 50vh;
+  width: 100%;
+  border: 0;
+}
+
+/* width */
+table tbody::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+table tbody::-webkit-scrollbar-track {
+  background: #c3b9a1;
+}
+
+/* Handle */
+table tbody::-webkit-scrollbar-thumb {
+  background: #f6f3ec;
+}
+
+/* Handle on hover */
+table tbody::-webkit-scrollbar-thumb:hover {
+  background: #f6f3ec;
+}
+
+table tbody tr {
+  border-top: 1px solid #f6f3ec;
+  background: none;
+}
+
+table tbody tr td {
+  padding: 0 10px;
+}
+
+tbody tr:nth-child(even) {
+  background: #fff;
+}
+
+.beer-list {
+  width: calc(100% + 20px);
+  list-style: none;
+  left: -20px;
+  padding: 0;
+}
+
+/* Beer Item */
+.beer-list .beerItem:first-child {
+  border-top: 0;
+}
+
+.beerItem {
+  justify-content: space-between;
+  background-color: #fff;
+  transition: 0.15s ease all;
+  align-items: center;
+  flex-flow: row wrap;
+  border-radius: 5px;
+  padding: 20px 0;
+  display: flex;
+}
+
+.beerItem:hover {
+  box-shadow: -5px 10px 20px #f6f3ec;
+  border-top: 1px solid transparent;
+  background: #ffff;
+}
+
+.beerItem:hover + .beerItem {
+  border-top: 1px solid transparent;
+}
+
+.beerItem__image img {
+  min-width: 80px;
+}
+
+.beerItem__image img {
+  width: 80px;
+}
+
+.beerItem__content {
+  padding: 0 20px;
+  flex: 2;
+}
+
+.beerItem__details {
+  font-size: 14px;
+  height: 0;
+  visibility: hidden;
+  transition: 2s ease all;
+  width: 100%;
+}
+
+.beerItem__details--is-open {
+  visibility: visible;
+  height: auto;
+}
+
+.beerItem__details p {
+  margin-top: 1rem;
+}
+
+.beerItem__link {
+  align-items: center;
+  display: flex;
+}
+
+.beerItem__link--is-hidden {
+  display: none;
+}
+
+.beerItem__link .button {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.beer-name {
+  display: inline-block;
+  margin-right: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #605948;
+}
+
+.beer-style {
+  color: #605948;
+  display: block;
+}
+
+.beer-abv {
+  background: #605948;
+  display: inline-block;
+  border-radius: 2px;
+  position: relative;
+  font-weight: 500;
+  color: inherit;
+  top: -2px;
+}
+
+.beer-abv--is-hidden {
+  display: none;
+}
+
+/* Random Beer */
+.refresh-button {
+  background-color: #d59737;
+  border-color: #d59737;
+  font-weight: 500;
+  color: #eeebe0;
+}
+
+.randoCard {
+  background-color: #eeebe0;
+}
+
+.card {
+  border: 3px;
+}
+
+.card-body {
+  padding: 5px 0 0;
+  margin: 20px;
+}
+
+/* Pagination */
+.pagination {
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  margin: 2rem 0 1rem;
+  display: flex;
+}
+
+.pagination--is-disabled {
+  display: none;
+}
+
+.pagination .page-link {
+  background-color: #d59737;
+  border-color: #d59737;
+  font-size: 0.85rem;
+  color: #fff;
+}
+
+.pagination .page-link:hover {
+  color: #f6f3ec;
+  opacity: 0.9;
+}
+
+.pagination .page-item.disabled .page-link {
+  border-color: #eeebe0;
+  opacity: 0.8;
+}
+
+/* Sliders */
+
+.slider {
+  background: #f6f3ec;
+  background-image: linear-gradient(
+    to right,
+    #fde994 10%,
+    #7a210b 45%,
+    #240c0d 99%
+  );
+  position: relative;
+  max-height: 15px;
+  margin-bottom: 30px;
+}
