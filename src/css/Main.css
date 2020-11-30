@@ -437,4 +437,5 @@ tbody tr:nth-child(even) {
   position: relative;
   max-height: 15px;
   margin-bottom: 30px;
+  border-radius: 5px;
 }
