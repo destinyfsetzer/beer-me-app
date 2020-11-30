@@ -11,10 +11,6 @@ router.post("/", authenticate, usersController.createUser);
 
 router.put("/:id", authenticate, usersController.updateUserById);
 
-router.delete(
-  "/:first_name",
-  authenticate,
-  usersController.deleteUserByUserName
-);
+router.delete("/:userName", authenticate, usersController.deleteUserByUserName);
 
 module.exports = router;
