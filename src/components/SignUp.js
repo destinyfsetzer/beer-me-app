@@ -36,9 +36,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignUp() {
   const classes = useStyles();
-  const [firstName, setFirstName] = useState(null);
-  const [lastName, setLastName] = useState(null);
-  const [email, setEmail] = useState(null);
   const [userName, setUserName] = useState(null);
   const [password, setPassword] = useState(null);
 
@@ -51,15 +48,6 @@ export default function SignUp() {
   // };
 
   const handleTextChange = (evt) => {
-    if (evt.target.name === "firstName") {
-      setFirstName(evt.target.value);
-    }
-    if (evt.target.name === "lastName") {
-      setLastName(evt.target.value);
-    }
-    if (evt.target.name === "email") {
-      setEmail(evt.target.value);
-    }
     if (evt.target.name === "userName") {
       setUserName(evt.target.value);
     }
@@ -72,16 +60,13 @@ export default function SignUp() {
     e.preventDefault();
 
     (async () => {
-      const Response = await fetch("http://localhost:4001/users", {
+      const Response = await fetch("/users", {
         method: "POST",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          firstName: firstName,
-          lastName: lastName,
-          email: email,
           userName: userName,
           password: password,
         }),
@@ -91,9 +76,6 @@ export default function SignUp() {
     })();
   };
 
-  let textInput1 = useRef(null);
-  let textInput2 = useRef(null);
-  let textInput3 = useRef(null);
   let textInput4 = useRef(null);
   let textInput5 = useRef(null);
 
@@ -110,46 +92,6 @@ export default function SignUp() {
         </Typography>
         <form className={classes.form} onSubmit={handleSubmit}>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                onChange={handleTextChange}
-                inputRef={textInput1}
-                autoComplete="fname"
-                name="firstName"
-                variant="outlined"
-                required
-                fullWidth
-                id="firstName"
-                label="First Name"
-                autoFocus
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                onChange={handleTextChange}
-                inputRef={textInput2}
-                variant="outlined"
-                required
-                fullWidth
-                id="lastName"
-                label="Last Name"
-                name="lastName"
-                autoComplete="lname"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                onChange={handleTextChange}
-                inputRef={textInput3}
-                variant="outlined"
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-              />
-            </Grid>
             <Grid item xs={12}>
               <TextField
                 onChange={handleTextChange}
@@ -186,9 +128,6 @@ export default function SignUp() {
             className={classes.submit}
             onClick={() => {
               setTimeout(() => {
-                textInput1.current.value = "";
-                textInput2.current.value = "";
-                textInput3.current.value = "";
                 textInput4.current.value = "";
                 textInput5.current.value = "";
               }, 100);

@@ -4,12 +4,12 @@ require("dotenv").config();
 class Connection {
   constructor() {
     if (!this.pool) {
-      console.log("creating connection...");
+      console.log("creating mysql connection...");
       this.pool = mysql.createPool({
         connectionLimit: 100,
         host: "den1.mysql5.gear.host",
         user: "beerme",
-        password: process.env.DB_password,
+        password: "Ns03_?9LRfgh",
         database: "beerme",
       });
 
