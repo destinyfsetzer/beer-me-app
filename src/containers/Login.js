@@ -1,17 +1,19 @@
 import { connect } from "react-redux";
-import HandleLogin from "../components/HandleLogin";
-import { logoutUser } from "../redux/actions";
+import App from "../components/Login";
+import { loginUser, addUser } from "../redux/actions";
 
 const mapStateToProps = (state) => {
+  const { user } = state;
   return {
-    user: state.user,
+    user,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    logoutUser: (user) => dispatch(logoutUser(user)),
+    loginUser: (user) => dispatch(loginUser(user)),
+    addUser: (user) => dispatch(addUser(user)),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HandleLogin);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
