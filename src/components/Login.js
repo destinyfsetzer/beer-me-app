@@ -60,7 +60,7 @@ class App extends Component {
     return (
       <div className="App">
         <Container maxWidth="sm">
-          <h1>Enter credentials to login</h1>
+          <h1>Login</h1>
           <form className="login-form" onSubmit={this.login}>
             <TextField
               required
