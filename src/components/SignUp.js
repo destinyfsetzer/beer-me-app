@@ -56,24 +56,38 @@ export default function SignUp() {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (evt) => {
+    evt.preventDefault();
 
-    (async () => {
-      const Response = await fetch("/users", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          userName: userName,
-          password: password,
-        }),
-      });
-      const content = await Response.json();
-      console.log("Response", content);
-    })();
+    const rawResponse = await fetch("http://localhost:3001/users", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        userName: userName,
+        password: password,
+      }),
+    });
+    const content = await rawResponse.text();
+    console.log("Response", content);
+
+    // (async () => {
+    //   const rawResponse = await fetch("/users", {
+    //     method: "POST",
+    //     headers: {
+    //       Accept: "application/json",
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       userName: userName,
+    //       password: password,
+    //     }),
+    //   });
+    //   const content = await rawResponse.json();
+    //   console.log("Response", content);
+    // })();
   };
 
   let textInput4 = useRef(null);

@@ -4,7 +4,7 @@ const usersRouter = require("./routers/users");
 const authRouter = require("./routers/auth");
 const { logger } = require("./middleware");
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 app.use(express.static("build"));
 
