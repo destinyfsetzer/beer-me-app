@@ -7,8 +7,8 @@ import {
   Grid,
   Link,
   TextField,
-  CssBaseline,
   Typography,
+  CssBaseline,
   Button,
 } from "@material-ui/core/";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
@@ -81,7 +81,7 @@ export default function Login() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign up
+          Login
         </Typography>
         <form onSubmit={handleSubmit} className={classes.form} noValidate>
           <TextField
