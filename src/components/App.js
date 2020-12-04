@@ -125,10 +125,12 @@ class App extends Component {
       <Router>
         <div className="content-area">
           {/* conditionally render sidebar if logged in */}
-          <Sidebar
-            onBeerSubmit={this.handleTermSubmit}
-            getCategories={this.getCategories}
-          />
+          {checkAuth() && (
+            <Sidebar
+              onBeerSubmit={this.handleTermSubmit}
+              getCategories={this.getCategories}
+            />
+          )}
           <main className="site-main container col-sm-8">
             <div className="site-content">
               <Route path="/" exact>

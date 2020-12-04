@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Redirect } from "react-router";
+// import { checkAuth } from "./CheckAuth"
 import {
   makeStyles,
   Container,
@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Login() {
   const [users, setUsers] = useState([]);
-  const [redirectHome, setRedirectHome] = React.useState(false);
+  // const [redirectHome, setRedirectHome] = React.useState(false);
   const classes = useStyles();
 
   // useEffect calls the function that will fetch data from backend and set state with response.
@@ -66,12 +66,13 @@ export default function Login() {
     e.preventDefault();
     document.cookie = "loggedIn=true;max-age=60*1000";
     window.location.replace("/search");
-    setRedirectHome(true);
+    // props.history.push("/search");
+    // setRedirectHome(true);
   };
 
-  if (redirectHome) {
-    return <Redirect to="/search" />;
-  }
+  // if (redirectHome) {
+  //   return <Redirect to="/search" />;
+  // }
   return (
     <Container component="main" maxWidth="xs" className="login-form">
       <CssBaseline />
