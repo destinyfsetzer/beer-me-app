@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-// import cookie from "cookie";
+import cookie from "cookie";
 import brewery from "../api/Proxy";
 import Match from "./Match";
+import { Route, Redirect } from "react-router";
 import Sidebar from "./Sidebar";
 import SearchBar from "./SearchBar";
 import SearchNav from "./SearchNav";
@@ -11,10 +12,25 @@ import CategoryList from "./CategoryList";
 import RandomBeer from "./RandomBeer";
 import "../css/Main.css";
 import Login from "./Login";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import BeerSchool from "./BeerSchool";
 import SignUp from "./SignUp";
-import { checkAuth } from "./CheckAuth";
+
+const checkAuth = () => {
+  const cookies = cookie.parse(document.cookie);
+  return cookies["loggedIn"] ? true : false;
+};
+
+const ProtectedRoute = ({ component: Component, ...rest }) => {
+  return (
+    <Route
+      {...rest}
+      render={(props) =>
+        checkAuth() ? <Component {...props} /> : <Redirect to="/" />
+      }
+    />
+  );
+};
 
 class App extends Component {
   // cookies = cookie.parse(document.cookie);
@@ -109,12 +125,10 @@ class App extends Component {
       <Router>
         <div className="content-area">
           {/* conditionally render sidebar if logged in */}
-          {checkAuth && (
-            <Sidebar
-              onBeerSubmit={this.handleTermSubmit}
-              getCategories={this.getCategories}
-            />
-          )}
+          <Sidebar
+            onBeerSubmit={this.handleTermSubmit}
+            getCategories={this.getCategories}
+          />
           <main className="site-main container col-sm-8">
             <div className="site-content">
               <Route path="/" exact>
@@ -123,7 +137,7 @@ class App extends Component {
               <Route path="/signup" exact>
                 <SignUp />
               </Route>
-              <Route path="/search" exact>
+              <ProtectedRoute path="/search" exact>
                 <SearchBar
                   onBeerSubmit={this.handleTermSubmit}
                   totalResults={this.state.totalResults}
@@ -141,22 +155,22 @@ class App extends Component {
                   numberOfPages={this.state.numberOfPages}
                   onPageSubmit={this.handlePagination}
                 />
-              </Route>
+              </ProtectedRoute>
 
-              <Route path="/beer-categories">
+              <ProtectedRoute path="/beer-categories">
                 <CategoryList categories={this.state.categories} />
-              </Route>
-              <Route path="/beer-school">
+              </ProtectedRoute>
+              <ProtectedRoute path="/beer-school">
                 <BeerSchool />
-              </Route>
+              </ProtectedRoute>
 
-              <Route path="/random">
+              <ProtectedRoute path="/random">
                 <RandomBeer
                   random={this.state.randomBeer}
                   getRandomBeer={this.getRandomBeer}
                 />
-              </Route>
-              <Route path="/match">
+              </ProtectedRoute>
+              <ProtectedRoute path="/match">
                 <Match />
                 <BeerList beers={this.state.beers} />
                 <Pagination
@@ -164,7 +178,7 @@ class App extends Component {
                   numberOfPages={this.state.numberOfPages}
                   onPageSubmit={this.handlePagination}
                 />
-              </Route>
+              </ProtectedRoute>
             </div>
           </main>
         </div>
