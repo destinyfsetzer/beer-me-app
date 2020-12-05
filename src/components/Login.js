@@ -13,8 +13,10 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: "100vh",
-    backgroundColor: "#F7F5EE",
+    "& .MuiPaper-root": {
+      height: "100vh",
+      backgroundColor: "#F7F5EE",
+    },
   },
   image: {
     backgroundImage:
@@ -24,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
     backgroundSize: "cover",
     backgroundPosition: "center",
-    opacity: "2",
+    opacity: "1",
   },
 
   paper: {
@@ -42,20 +44,22 @@ const useStyles = makeStyles((theme) => ({
     width: "100%", // Fix IE 11 issue.
     marginTop: theme.spacing(1),
     backgroundColor: "#F7F5EE",
+    color: "#D59737",
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
     backgroundColor: "#D59737",
   },
   beerHeader: {
-    fontSize: "80px",
-    color: "white",
+    fontSize: "90px",
+    color: "#F7F5EE",
     fontWeight: "bold",
     textAlign: "center",
     marginTop: "20%",
+    textShadow: "2px 5px #605948;",
   },
   overlayText: {
-    color: "white",
+    color: "#F7F5EE",
     fontSize: "25px",
     textAlign: "center",
     padding: "10px",
@@ -105,10 +109,10 @@ export default function Login() {
         <Typography className={classes.beerHeader}>BeerMe</Typography>
         <div className={classes.titleText}>
           <Typography className={classes.overlayText}>
-            <b>BeerMe</b> is a craft beer library and recommendation app.  You
-            can search for beers by style, learn about their flavors, and get to
-            know common beer terms to make you a part of the educated beer
-            drinker elite.
+            <em style={{ color: "#605948" }}>BeerMe</em> is a craft beer library
+            and recommendation app.  You can search for beers by style, learn
+            about their flavors, and get to know common beer terms to make you a
+            part of the educated beer drinker elite.
           </Typography>
         </div>
       </Grid>
@@ -156,7 +160,7 @@ export default function Login() {
             <Grid container>
               <Grid item>
                 <Link href="/signup" className={classes.form} variant="body2">
-                  {"Don't have an account? Sign Up"}
+                  Don't have an account? Sign Up
                 </Link>
               </Grid>
             </Grid>
