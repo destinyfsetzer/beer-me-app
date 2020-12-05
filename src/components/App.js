@@ -123,6 +123,14 @@ class App extends Component {
   render() {
     return (
       <Router>
+        <div>
+          <Route path="/" exact>
+            <Login />
+          </Route>
+          <Route path="/signup" exact>
+            <SignUp />
+          </Route>
+        </div>
         <div className="content-area">
           {/* conditionally render sidebar if logged in */}
           {checkAuth() && (
@@ -133,12 +141,6 @@ class App extends Component {
           )}
           <main className="site-main container col-sm-8">
             <div className="site-content">
-              <Route path="/" exact>
-                <Login />
-              </Route>
-              <Route path="/signup" exact>
-                <SignUp />
-              </Route>
               <ProtectedRoute path="/search" exact>
                 <SearchBar
                   onBeerSubmit={this.handleTermSubmit}

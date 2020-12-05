@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    backgroundColor: "#F7F5EE",
   },
   avatar: {
     margin: theme.spacing(1),
@@ -95,69 +96,74 @@ export default function SignUp() {
   let textInput5 = useRef(null);
 
   return (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Sign up
-        </Typography>
-        <form className={classes.form} onSubmit={handleSubmit}>
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <TextField
-                onChange={handleTextChange}
-                inputRef={textInput4}
-                variant="outlined"
-                required
-                fullWidth
-                name="userName"
-                label="Username"
-                type="text"
-                id="username"
-              />
+    <div>
+      <Typography>
+        “Beer is proof that God loves us and wants us to be happy."
+      </Typography>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <div className={classes.paper}>
+          <Avatar className={classes.avatar}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Sign up
+          </Typography>
+          <form className={classes.form} onSubmit={handleSubmit}>
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <TextField
+                  onChange={handleTextChange}
+                  inputRef={textInput4}
+                  variant="outlined"
+                  required
+                  fullWidth
+                  name="userName"
+                  label="Username"
+                  type="text"
+                  id="username"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  onChange={handleTextChange}
+                  inputRef={textInput5}
+                  variant="outlined"
+                  required
+                  fullWidth
+                  name="password"
+                  label="Password"
+                  type="password"
+                  id="password"
+                  autoComplete="current-password"
+                />
+              </Grid>
             </Grid>
-            <Grid item xs={12}>
-              <TextField
-                onChange={handleTextChange}
-                inputRef={textInput5}
-                variant="outlined"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+              onClick={() => {
+                setTimeout(() => {
+                  textInput4.current.value = "";
+                  textInput5.current.value = "";
+                }, 100);
+              }}
+            >
+              Sign Up
+            </Button>
+            <Grid container justify="flex-end">
+              <Grid item>
+                <Link to="/" className={classes.form} variant="body2">
+                  Already have an account? Sign in
+                </Link>
+              </Grid>
             </Grid>
-          </Grid>
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-            onClick={() => {
-              setTimeout(() => {
-                textInput4.current.value = "";
-                textInput5.current.value = "";
-              }, 100);
-            }}
-          >
-            Sign Up
-          </Button>
-          <Grid container justify="flex-end">
-            <Grid item>
-              <Link to="/" className={classes.form} variant="body2">
-                Already have an account? Sign in
-              </Link>
-            </Grid>
-          </Grid>
-        </form>
-      </div>
-    </Container>
+          </form>
+        </div>
+      </Container>
+    </div>
   );
 }
