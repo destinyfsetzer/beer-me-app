@@ -88,6 +88,7 @@ export default function SignUp() {
     //   const content = await rawResponse.json();
     //   console.log("Response", content);
     // })();
+    window.location.replace("/");
   };
 
   let textInput4 = useRef(null);

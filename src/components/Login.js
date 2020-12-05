@@ -20,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    backgroundColor: "#EDEBE0",
+    padding: "25px 25px 25px 25px",
+    borderRadius: "5px",
   },
   avatar: {
     margin: theme.spacing(1),
@@ -36,6 +39,9 @@ const useStyles = makeStyles((theme) => ({
   },
   login: {
     color: "#605948",
+  },
+  loginForm: {
+    backgroundColor: "#EDEBE0",
   },
 }));
 
@@ -74,58 +80,66 @@ export default function Login() {
   //   return <Redirect to="/search" />;
   // }
   return (
-    <Container component="main" maxWidth="xs" className="login-form">
-      <CssBaseline />
-      <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Login
-        </Typography>
-        <form onSubmit={handleSubmit} className={classes.form} noValidate>
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            type="text"
-            id="userName"
-            label="username"
-            name="userName"
-            autoComplete="userName"
-            autoFocus
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
-            Sign In
-          </Button>
-          <Grid container>
-            <Grid item>
-              <Link href="/signup" className={classes.form} variant="body2">
-                {"Don't have an account? Sign Up"}
-              </Link>
+    <div className={classes.background}>
+      <h4>
+        <b>BeerMe</b> is a craft beer library and recommendation app.  You can
+        search for beers by style, learn about their flavors, and get to know
+        common beer terms to make you a part of the educated beer drinker elite.
+        Login below to get started. Cheers!
+      </h4>
+      <Container component="main" maxWidth="xs" className="loginForm">
+        <CssBaseline />
+        <div className={classes.paper}>
+          <Avatar className={classes.avatar}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Login
+          </Typography>
+          <form onSubmit={handleSubmit} className={classes.form} noValidate>
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              type="text"
+              id="userName"
+              label="username"
+              name="userName"
+              autoComplete="userName"
+              autoFocus
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+            >
+              Sign In
+            </Button>
+            <Grid container>
+              <Grid item>
+                <Link href="/signup" className={classes.form} variant="body2">
+                  {"Don't have an account? Sign Up"}
+                </Link>
+              </Grid>
             </Grid>
-          </Grid>
-        </form>
-      </div>
-      <Box mt={8}></Box>
-    </Container>
+          </form>
+        </div>
+        <Box mt={8}></Box>
+      </Container>
+    </div>
   );
 }

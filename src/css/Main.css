@@ -28,7 +28,7 @@ Burnt Orange: #9C5747; */
 .root {
   min-height: 100vh;
   /* font-family: "franklin-gothic-urw-comp", sans-serif; */
-  background-color: #fff;
+  background-color: #f7f5ee;
   /* background-image: url("https://images.unsplash.com/photo-1536584979139-dde0784c7c75?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"); */
 }
 
@@ -140,7 +140,7 @@ h2 {
 }
 
 .nav-item .nav-link.active {
-  background: #fff;
+  background: F7F5EE;
   color: #d59737;
 }
 
@@ -176,8 +176,8 @@ h2 {
 }
 
 .btn-view {
-  background-color: #f6f3ec;
-  color: #605948;
+  background-color: #d59737;
+  color: #fff;
 }
 
 .btn .btn-light .btn-sm {
@@ -244,12 +244,12 @@ table tbody::-webkit-scrollbar {
 
 /* Track */
 table tbody::-webkit-scrollbar-track {
-  background: #c3b9a1;
+  background: #edebe0;
 }
 
 /* Handle */
 table tbody::-webkit-scrollbar-thumb {
-  background: #f6f3ec;
+  background: #d69836;
 }
 
 /* Handle on hover */
@@ -266,9 +266,9 @@ table tbody tr td {
   padding: 0 10px;
 }
 
-tbody tr:nth-child(even) {
+/* tbody tr:nth-child(even) {
   background: #fff;
-}
+} */
 
 .beer-list {
   width: calc(100% + 20px);
@@ -279,12 +279,12 @@ tbody tr:nth-child(even) {
 
 /* Beer Item */
 .beer-list .beerItem:first-child {
-  border-top: 0;
+  border-top: 1;
 }
 
 .beerItem {
   justify-content: space-between;
-  background-color: #fff;
+  background-color: #f7f5ee;
   transition: 0.15s ease all;
   align-items: center;
   flex-flow: row wrap;
@@ -294,9 +294,9 @@ tbody tr:nth-child(even) {
 }
 
 .beerItem:hover {
-  box-shadow: -5px 10px 20px #f6f3ec;
+  box-shadow: -5px 10px 20px #f7f5ee;
   border-top: 1px solid transparent;
-  background: #ffff;
+  background: #f7f5ee;
 }
 
 .beerItem:hover + .beerItem {
@@ -305,6 +305,7 @@ tbody tr:nth-child(even) {
 
 .beerItem__image img {
   min-width: 80px;
+  border-radius: 5px;
 }
 
 .beerItem__image img {
@@ -319,6 +320,8 @@ tbody tr:nth-child(even) {
 .beerItem__details {
   font-size: 14px;
   height: 0;
+  background-color: white;
+  margin-top: 5px;
   visibility: hidden;
   transition: 2s ease all;
   width: 100%;
