@@ -58,6 +58,7 @@ h2 {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+  border-radius: 5px;
 }
 
 .lager-ale {
@@ -110,10 +111,10 @@ h2 {
 
 /* Sidebar */
 .sidebar {
-  box-shadow: 5px 0px 10px #ececec;
+  box-shadow: 5px 0px 10px #c3b9a1;
   justify-content: center;
   flex-direction: column;
-  background: #eeebe0;
+  background: #e0d9ca;
   max-width: 250px;
   display: flex;
   position: static;
