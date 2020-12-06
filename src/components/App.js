@@ -123,65 +123,71 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="content-area">
-          {/* conditionally render sidebar if logged in */}
-          <Sidebar
-            onBeerSubmit={this.handleTermSubmit}
-            getCategories={this.getCategories}
-          />
-          <main className="site-main container col-sm-8">
-            <div className="site-content">
-              <Route path="/" exact>
-                <Login />
-              </Route>
-              <Route path="/signup" exact>
-                <SignUp />
-              </Route>
-              <ProtectedRoute path="/search" exact>
-                <SearchBar
-                  onBeerSubmit={this.handleTermSubmit}
-                  totalResults={this.state.totalResults}
-                />
-
-                <SearchNav
-                  onBeerSubmit={this.handleTermSubmit}
-                  currentPage={this.state.currentPage}
-                  getAllBeers={this.getAllBeers}
-                />
-
-                <BeerList beers={this.state.beers} />
-                <Pagination
-                  currentPage={this.state.currentPage}
-                  numberOfPages={this.state.numberOfPages}
-                  onPageSubmit={this.handlePagination}
-                />
-              </ProtectedRoute>
-
-              <ProtectedRoute path="/beer-categories">
-                <CategoryList categories={this.state.categories} />
-              </ProtectedRoute>
-              <ProtectedRoute path="/beer-school">
-                <BeerSchool />
-              </ProtectedRoute>
-
-              <ProtectedRoute path="/random">
-                <RandomBeer
-                  random={this.state.randomBeer}
-                  getRandomBeer={this.getRandomBeer}
-                />
-              </ProtectedRoute>
-              <ProtectedRoute path="/match">
-                <Match />
-                <BeerList beers={this.state.beers} />
-                <Pagination
-                  currentPage={this.state.currentPage}
-                  numberOfPages={this.state.numberOfPages}
-                  onPageSubmit={this.handlePagination}
-                />
-              </ProtectedRoute>
-            </div>
-          </main>
+        <div className="main">
+          <Route path="/" exact>
+            <Login />
+          </Route>
+          <Route path="/signup" exact>
+            <SignUp />
+          </Route>
         </div>
+        {/* conditionally render everything if logged in  */}
+        {checkAuth() && (
+          <div className="content-area">
+            {/* conditionally render sidebar if logged in */}
+            {/* {checkAuth() && ( */}
+            <Sidebar
+              onBeerSubmit={this.handleTermSubmit}
+              getCategories={this.getCategories}
+            />
+            <main className="site-main container col-sm-8">
+              <div className="site-content">
+                <ProtectedRoute path="/search" exact>
+                  <SearchBar
+                    onBeerSubmit={this.handleTermSubmit}
+                    totalResults={this.state.totalResults}
+                  />
+
+                  <SearchNav
+                    onBeerSubmit={this.handleTermSubmit}
+                    currentPage={this.state.currentPage}
+                    getAllBeers={this.getAllBeers}
+                  />
+
+                  <BeerList beers={this.state.beers} />
+                  <Pagination
+                    currentPage={this.state.currentPage}
+                    numberOfPages={this.state.numberOfPages}
+                    onPageSubmit={this.handlePagination}
+                  />
+                </ProtectedRoute>
+
+                <ProtectedRoute path="/beer-categories">
+                  <CategoryList categories={this.state.categories} />
+                </ProtectedRoute>
+                <ProtectedRoute path="/beer-school">
+                  <BeerSchool />
+                </ProtectedRoute>
+
+                <ProtectedRoute path="/random">
+                  <RandomBeer
+                    random={this.state.randomBeer}
+                    getRandomBeer={this.getRandomBeer}
+                  />
+                </ProtectedRoute>
+                <ProtectedRoute path="/match">
+                  <Match />
+                  <BeerList beers={this.state.beers} />
+                  <Pagination
+                    currentPage={this.state.currentPage}
+                    numberOfPages={this.state.numberOfPages}
+                    onPageSubmit={this.handlePagination}
+                  />
+                </ProtectedRoute>
+              </div>
+            </main>
+          </div>
+        )}
       </Router>
     );
   }

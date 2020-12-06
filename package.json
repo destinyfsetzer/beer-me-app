@@ -2,7 +2,7 @@
   "name": "beer-me",
   "version": "0.1.0",
   "private": true,
-  // "proxy": "http://localhost:4001",
+  "proxy": "http://localhost:4001",
   "dependencies": {
     "@availity/api-axios": "^5.5.9",
     "@availity/api-core": "^5.4.1",

@@ -8,6 +8,7 @@ const BeerSchool = () => {
       style={{
         maxHeight: "90vh",
         overflow: "auto",
+        backgroundColor: "#EDEBE0",
       }}
     >
       <div className="beer-school">
