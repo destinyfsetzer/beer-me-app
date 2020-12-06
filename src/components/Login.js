@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     backgroundImage:
-      "url(https://i.ibb.co/1JHmFs2/beer-icons-background-vector-9715570.jpg)",
+      "url(https://images.unsplash.com/photo-1511963118349-e2b22c0efcfc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80)",
     backgroundRepeat: "no-repeat",
     backgroundColor: "#F7F5EE",
 
@@ -50,23 +50,16 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3, 0, 2),
     backgroundColor: "#D59737",
   },
-  beerHeader: {
-    fontSize: "90px",
-    color: "#F7F5EE",
-    fontWeight: "bold",
-    textAlign: "center",
-    marginTop: "20%",
-    textShadow: "1px 2px  #605948;",
-  },
   overlayText: {
     color: "#F7F5EE",
-    fontSize: "25px",
+    fontSize: "20px",
     textAlign: "center",
     padding: "10px",
+    margin: "10% 5%",
   },
   titleText: {
-    backgroundColor: "#F7B624",
-    margin: "0px 10px",
+    // backgroundColor: "#F7B624",
+    margin: "0px 20px",
     borderRadius: "5px",
   },
 }));
@@ -106,13 +99,23 @@ export default function Login() {
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image}>
-        <Typography className={classes.beerHeader}>BeerMe</Typography>
+        {/* <Typography className={classes.beerHeader}>BeerMe</Typography> */}
         <div className={classes.titleText}>
           <Typography className={classes.overlayText}>
-            <em style={{ color: "#605948", fontWeight: "bold" }}>BeerMe</em> is
-            a craft beer library and recommendation app.  You can search for
-            beers by style, learn about their flavors, and get to know common
-            beer terms to make you a part of the educated beer drinker elite.
+            Welcome to{" "}
+            <b
+              style={{
+                fontSize: "35px",
+                letterSpacing: "2px",
+                color: "#D69836",
+              }}
+            >
+              BeerMe
+            </b>{" "}
+            your favorite craft beer library and recommendation app.  Here you
+            can search for beers by style, learn about their flavors, and get to
+            know common beer terms to make you a part of the educated beer
+            drinker elite.
           </Typography>
         </div>
       </Grid>

@@ -123,7 +123,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="main">
           <Route path="/" exact>
             <Login />
           </Route>
