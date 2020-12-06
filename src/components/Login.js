@@ -20,9 +20,9 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     backgroundImage:
-      "url(https://images.unsplash.com/photo-1511963118349-e2b22c0efcfc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80)",
+      "url(https://images.unsplash.com/photo-1571767454098-246b94fbcf70?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1001&q=80)",
     backgroundRepeat: "no-repeat",
-    backgroundColor: "#F7F5EE",
+    backgroundColor: "#E0D9CA",
 
     backgroundSize: "cover",
     backgroundPosition: "center",
@@ -51,16 +51,19 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#D59737",
   },
   overlayText: {
-    color: "#F7F5EE",
-    fontSize: "20px",
+    color: "#605948",
+    fontSize: "16px",
     textAlign: "center",
-    padding: "10px",
-    margin: "10% 5%",
+    padding: "20px",
+    margin: "30% 5%",
   },
   titleText: {
-    // backgroundColor: "#F7B624",
+    backgroundColor: "#F7F5EE",
     margin: "0px 20px",
     borderRadius: "5px",
+  },
+  Typography: {
+    fontFamily: "Raleway, sans-serif",
   },
 }));
 
@@ -96,81 +99,86 @@ export default function Login() {
   };
 
   return (
-    <Grid container component="main" className={classes.root}>
-      <CssBaseline />
-      <Grid item xs={false} sm={4} md={7} className={classes.image}>
-        {/* <Typography className={classes.beerHeader}>BeerMe</Typography> */}
-        <div className={classes.titleText}>
-          <Typography className={classes.overlayText}>
-            Welcome to{" "}
-            <b
-              style={{
-                fontSize: "35px",
-                letterSpacing: "2px",
-                color: "#D69836",
-              }}
-            >
-              BeerMe
-            </b>{" "}
-            your favorite craft beer library and recommendation app.  Here you
-            can search for beers by style, learn about their flavors, and get to
-            know common beer terms to make you a part of the educated beer
-            drinker elite.
-          </Typography>
-        </div>
-      </Grid>
-      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-        <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign in
-          </Typography>
-          <form onSubmit={handleSubmit} className={classes.form} noValidate>
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              type="text"
-              id="userName"
-              label="username"
-              name="userName"
-              autoComplete="userName"
-              autoFocus
-            />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-            >
-              Sign In
-            </Button>
-            <Grid container>
-              <Grid item>
-                <Link href="/signup" className={classes.form} variant="body2">
-                  Don't have an account? Sign Up
-                </Link>
+    <div className={classes.fonts}>
+      <Grid container component="main" className={classes.root}>
+        <CssBaseline />
+        <Grid item xs={false} sm={4} md={7} className={classes.image}>
+          {/* <Typography className={classes.beerHeader}>BeerMe</Typography> */}
+          <div className={classes.titleText}>
+            <Typography className={classes.overlayText}>
+              <b>WELCOME TO</b>
+              <br />
+              <b
+                style={{
+                  fontSize: "4em",
+                  letterSpacing: "2px",
+                  color: "#D69836",
+                  textShadow: "2px 2px #605948",
+                }}
+              >
+                BEERME
+              </b>{" "}
+              <br />
+              BeerMe is a craft beer library and recommendation app.  Here you
+              can search for beers by style, learn about their flavors, and get
+              to know common beer terms to make you a part of the educated beer
+              drinker elite. Cheers!
+            </Typography>
+          </div>
+        </Grid>
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+          <div className={classes.paper}>
+            <Avatar className={classes.avatar}>
+              <LockOutlinedIcon />
+            </Avatar>
+            <Typography component="h1" variant="h5">
+              Sign in
+            </Typography>
+            <form onSubmit={handleSubmit} className={classes.form} noValidate>
+              <TextField
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                type="text"
+                id="userName"
+                label="username"
+                name="userName"
+                autoComplete="userName"
+                autoFocus
+              />
+              <TextField
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                autoComplete="current-password"
+              />
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="primary"
+                className={classes.submit}
+              >
+                Sign In
+              </Button>
+              <Grid container>
+                <Grid item>
+                  <Link href="/signup" className={classes.form} variant="body2">
+                    Don't have an account? Sign Up
+                  </Link>
+                </Grid>
               </Grid>
-            </Grid>
-          </form>
-        </div>
+            </form>
+          </div>
+        </Grid>
       </Grid>
-    </Grid>
+    </div>
   );
 }
 
