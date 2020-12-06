@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "30% 5%",
   },
   titleText: {
-    backgroundColor: "#F7F5EE",
+    backgroundColor: "rgb(246,243,236, .8)",
     margin: "0px 20px",
     borderRadius: "5px",
   },
@@ -131,7 +131,11 @@ export default function Login() {
             <Avatar className={classes.avatar}>
               <LockOutlinedIcon />
             </Avatar>
-            <Typography component="h1" variant="h5">
+            <Typography
+              style={{ color: "#605948" }}
+              component="h1"
+              variant="h5"
+            >
               Sign in
             </Typography>
             <form onSubmit={handleSubmit} className={classes.form} noValidate>

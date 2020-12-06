@@ -33,6 +33,12 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3, 0, 2),
     backgroundColor: "#D59737",
   },
+  quote: {
+    fontSize: "18px",
+    letterSpacing: "2px",
+    textAlign: "center",
+    paddingTop: "10%",
+  },
 }));
 
 export default function SignUp() {
@@ -97,7 +103,7 @@ export default function SignUp() {
 
   return (
     <div>
-      <Typography>
+      <Typography className={classes.quote}>
         “Beer is proof that God loves us and wants us to be happy."
       </Typography>
       <Container component="main" maxWidth="xs">
@@ -106,7 +112,7 @@ export default function SignUp() {
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component="h1" variant="h5">
+          <Typography style={{ color: "#605948" }} component="h1" variant="h5">
             Sign up
           </Typography>
           <form className={classes.form} onSubmit={handleSubmit}>
