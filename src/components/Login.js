@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     textAlign: "center",
     marginTop: "20%",
-    textShadow: "2px 5px #605948;",
+    textShadow: "1px 2px  #605948;",
   },
   overlayText: {
     color: "#F7F5EE",
@@ -109,10 +109,10 @@ export default function Login() {
         <Typography className={classes.beerHeader}>BeerMe</Typography>
         <div className={classes.titleText}>
           <Typography className={classes.overlayText}>
-            <em style={{ color: "#605948" }}>BeerMe</em> is a craft beer library
-            and recommendation app.  You can search for beers by style, learn
-            about their flavors, and get to know common beer terms to make you a
-            part of the educated beer drinker elite.
+            <em style={{ color: "#605948", fontWeight: "bold" }}>BeerMe</em> is
+            a craft beer library and recommendation app.  You can search for
+            beers by style, learn about their flavors, and get to know common
+            beer terms to make you a part of the educated beer drinker elite.
           </Typography>
         </div>
       </Grid>

@@ -27,7 +27,7 @@ Burnt Orange: #9C5747; */
 /* Root */
 .root {
   min-height: 100vh;
-  /* font-family: "franklin-gothic-urw-comp", sans-serif; */
+  /* font-family: "Dosis", sans-serif; */
   background-color: #f7f5ee;
   /* background-image: url("https://images.unsplash.com/photo-1536584979139-dde0784c7c75?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"); */
 }
@@ -172,7 +172,7 @@ h2 {
 }
 
 .list-group .btn-sm {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   background-color: #eeebe0;
 }
 
@@ -199,7 +199,7 @@ h2 {
 .search-bar label {
   justify-content: space-between;
   flex-direction: row;
-  font-size: 18px;
+  font-size: 20px;
   margin: 0 0 10px;
   display: flex;
   border: 2px solid #c3b9a1;
@@ -319,7 +319,7 @@ table tbody tr td {
 }
 
 .beerItem__details {
-  font-size: 14px;
+  font-size: 18px;
   height: 0;
   background-color: white;
   margin-top: 5px;
@@ -355,7 +355,7 @@ table tbody tr td {
   display: inline-block;
   margin-right: 10px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
   color: #605948;
 }
 
@@ -415,7 +415,7 @@ table tbody tr td {
 .pagination .page-link {
   background-color: #d59737;
   border-color: #d59737;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: #fff;
 }
 
