@@ -1,9 +1,8 @@
 // import { FavoriteBorder } from "@material-ui/icons";
 import React, { Component } from "react";
 import placeholderImage from "../images/placeholder-beer.png";
-// import FavoriteIcon from "@material-ui/icons/Favorite";
-// import IconButton from "@material-ui/core/IconButton";
-// import FavoriteIcon from "@material-ui/icons/Favorite";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import IconButton from "@material-ui/core/IconButton";
 
 class BeerItem extends Component {
   constructor(props) {
@@ -45,9 +44,9 @@ class BeerItem extends Component {
             View Details
           </a>
         </td>
-        {/* <IconButton aria-label="add to favorites">
-          <FavoriteIcon style={{ color: "red", opacity: ".5" }} />
-        </IconButton> */}
+        <IconButton aria-label="add to favorites">
+          <FavoriteIcon style={{ color: "red", opacity: ".8" }} />
+        </IconButton>
 
         <td className="beerItem__details">
           <p>{beer.description}</p>
