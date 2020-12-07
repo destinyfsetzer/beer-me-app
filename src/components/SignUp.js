@@ -81,6 +81,8 @@ export default function SignUp() {
     <div>
       <Typography className={classes.quote}>
         “Beer is proof that God loves us and wants us to be happy."
+        <br />
+        -Benjamin Franklin
       </Typography>
       <Container component="main" maxWidth="xs">
         <CssBaseline />

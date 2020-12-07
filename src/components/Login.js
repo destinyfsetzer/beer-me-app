@@ -64,9 +64,6 @@ const useStyles = makeStyles((theme) => ({
     margin: "0px 20px",
     borderRadius: "5px",
   },
-  fonts: {
-    fontFamily: "Raleway, sans-serif",
-  },
 }));
 
 export default function Login() {
@@ -139,7 +136,10 @@ export default function Login() {
       <Grid item xs={false} sm={4} md={7} className={classes.image}>
         {/* <Typography className={classes.beerHeader}>BeerMe</Typography> */}
         <div className={classes.titleText}>
-          <Typography className={classes.overlayText}>
+          <Typography
+            className={classes.overlayText}
+            style={{ fontFamily: "Raleway, sans-serif" }}
+          >
             <b>WELCOME TO</b>
             <br />
             <b
@@ -153,10 +153,12 @@ export default function Login() {
               BEERME
             </b>{" "}
             <br />
-            BeerMe is a craft beer library and recommendation app.  Here you can
-            search for beers by style, learn about their flavors, and get to
-            know common beer terms to make you a part of the educated beer
-            drinker elite. Cheers!
+            <b>
+              BeerMe is a craft beer library and recommendation app.  Here you
+              can search for beers by style, learn about their flavors, and get
+              to know common beer terms to make you a part of the educated beer
+              drinker elite. Cheers!
+            </b>
           </Typography>
         </div>
       </Grid>
@@ -176,7 +178,7 @@ export default function Login() {
               fullWidth
               type="text"
               id="userName"
-              label="username"
+              label="Username"
               name="userName"
               onChange={handleUsernameChange}
               autoComplete="userName"
@@ -200,12 +202,18 @@ export default function Login() {
               variant="contained"
               color="primary"
               className={classes.submit}
+              style={{ fontFamily: "Raleway, sans-serif" }}
             >
               Sign In
             </Button>
             <Grid container>
               <Grid item>
-                <Link href="/signup" className={classes.form} variant="body2">
+                <Link
+                  href="/signup"
+                  style={{ fontFamily: "Raleway, sans-serif" }}
+                  className={classes.form}
+                  variant="body2"
+                >
                   Don't have an account? Sign Up
                 </Link>
               </Grid>
