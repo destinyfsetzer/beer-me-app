@@ -46,6 +46,7 @@
   "scripts": {
     "start": "concurrently \"npm run server\" \" react-scripts start\" ",
     "server": "nodemon Server/index.js",
+    // "api": "node api/index.js",
     "start-dev": "concurrently \"npm run server\" \"react-scripts start\" ",
     "build": "react-scripts build",
     "test": "react-scripts test",

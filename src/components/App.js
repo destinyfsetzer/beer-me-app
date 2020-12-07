@@ -16,12 +16,14 @@ import { BrowserRouter as Router } from "react-router-dom";
 import BeerSchool from "./BeerSchool";
 import SignUp from "./SignUp";
 
+// authentication with cookies
 const checkAuth = () => {
   const cookies = cookie.parse(document.cookie);
   console.log("this my cookie", cookies.token);
   return cookies["loggedIn"] ? true : false;
 };
 
+// must be logged in to view site
 const ProtectedRoute = ({ component: Component, ...rest }) => {
   return (
     <Route
@@ -123,6 +125,7 @@ class App extends Component {
 
   render() {
     return (
+      //unprotected routes for home/login/signup
       <Router>
         <div className="main">
           <Route path="/" exact>
@@ -137,6 +140,7 @@ class App extends Component {
           <div className="content-area">
             {/* conditionally render sidebar if logged in */}
             {/* {checkAuth() && ( */}
+            {/* //sidebar displayed at all times after login */}
             <Sidebar
               onBeerSubmit={this.handleTermSubmit}
               getCategories={this.getCategories}

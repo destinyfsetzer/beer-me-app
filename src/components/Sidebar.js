@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../images/logo-brown.png";
-// import { checkAuth } from "./CheckAuth";
 
 class Sidebar extends Component {
   state = { term: "" };
