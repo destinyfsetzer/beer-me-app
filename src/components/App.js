@@ -18,6 +18,7 @@ import SignUp from "./SignUp";
 
 const checkAuth = () => {
   const cookies = cookie.parse(document.cookie);
+  console.log("this my cookie", cookies.token);
   return cookies["loggedIn"] ? true : false;
 };
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import { checkAuth } from "./CheckAuth";
+import cookie from "cookie";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -69,6 +69,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Login() {
+  const cookies = cookie.parse(document.cookie);
   const [users, setUsers] = useState([]);
   const [userName, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -101,7 +102,6 @@ export default function Login() {
     return body;
   };
 
-  let token;
   const handleSubmit = async (e) => {
     e.preventDefault();
     //  const rawResponse = await fetch("http://localhost:3001/auth/login", {
@@ -122,7 +122,8 @@ export default function Login() {
         password: password,
       })
       .then((res) => {
-        token = res.data.token;
+        document.cookie = `token=${res.data.token}`;
+        console.log(cookies.token);
       });
 
     document.cookie = "loggedIn=true;max-age=60*1000";
