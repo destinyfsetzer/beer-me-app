@@ -70,7 +70,7 @@ class Sidebar extends Component {
                 <i className="fas fa-beer"></i>Random Beer
               </NavLink>
             </li>
-
+            {/* beer quiz and favorites page coming soon */}
             {/* <li className="nav-item">
               <NavLink
                 to="/match"
@@ -80,15 +80,15 @@ class Sidebar extends Component {
                 <i className="fas fa-question"></i>Beer Matcher
               </NavLink>
             </li> */}
-            {/* <li className="nav-item"> */}
-            {/* <NavLink
+            {/* <li className="nav-item">
+              <NavLink
                 to="/favorites"
                 className="nav-link"
                 activeClassName="active"
               >
                 <i className="fa fa-bookmark"></i>Favorites
-              </NavLink> */}
-            {/* </li> */}
+              </NavLink>
+            </li> */}
             <li
               onClick={() => {
                 document.cookie = "loggedIn=";

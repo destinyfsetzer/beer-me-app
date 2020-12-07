@@ -56,12 +56,13 @@ const useStyles = makeStyles((theme) => ({
     color: "#605948",
     fontSize: "16px",
     textAlign: "center",
-    padding: "20px",
+    padding: "15px 0 20px 0",
+    letterSpacing: "1px",
     margin: "30% 5%",
   },
   titleText: {
     backgroundColor: "rgb(246,243,236, .8)",
-    margin: "0px 20px",
+    margin: "0px 80px",
     borderRadius: "5px",
   },
 }));
@@ -145,9 +146,9 @@ export default function Login() {
             <b
               style={{
                 fontSize: "4em",
-                letterSpacing: "2px",
+                letterSpacing: "10px",
                 color: "#D69836",
-                textShadow: "2px 2px #605948",
+                textShadow: "3px 4px #605948",
               }}
             >
               BEERME

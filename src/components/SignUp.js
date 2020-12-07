@@ -71,7 +71,7 @@ export default function SignUp() {
     });
     const content = await rawResponse.text();
     console.log("Response", content);
-    window.location.replace("/");
+    window.location.assign("/");
   };
 
   let textInput4 = useRef(null);
