@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
       height: "100vh",
       backgroundColor: "#F7F5EE",
     },
+    fontFamily: "Raleway, sans-serif",
   },
   image: {
     backgroundImage:
@@ -63,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "0px 20px",
     borderRadius: "5px",
   },
-  Typography: {
+  fonts: {
     fontFamily: "Raleway, sans-serif",
   },
 }));
@@ -133,92 +134,86 @@ export default function Login() {
   };
 
   return (
-    <div className={classes.fonts}>
-      <Grid container component="main" className={classes.root}>
-        <CssBaseline />
-        <Grid item xs={false} sm={4} md={7} className={classes.image}>
-          {/* <Typography className={classes.beerHeader}>BeerMe</Typography> */}
-          <div className={classes.titleText}>
-            <Typography className={classes.overlayText}>
-              <b>WELCOME TO</b>
-              <br />
-              <b
-                style={{
-                  fontSize: "4em",
-                  letterSpacing: "2px",
-                  color: "#D69836",
-                  textShadow: "2px 2px #605948",
-                }}
-              >
-                BEERME
-              </b>{" "}
-              <br />
-              BeerMe is a craft beer library and recommendation app.  Here you
-              can search for beers by style, learn about their flavors, and get
-              to know common beer terms to make you a part of the educated beer
-              drinker elite. Cheers!
-            </Typography>
-          </div>
-        </Grid>
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-          <div className={classes.paper}>
-            <Avatar className={classes.avatar}>
-              <LockOutlinedIcon />
-            </Avatar>
-            <Typography
-              style={{ color: "#605948" }}
-              component="h1"
-              variant="h5"
+    <Grid container component="main" className={classes.root}>
+      <CssBaseline />
+      <Grid item xs={false} sm={4} md={7} className={classes.image}>
+        {/* <Typography className={classes.beerHeader}>BeerMe</Typography> */}
+        <div className={classes.titleText}>
+          <Typography className={classes.overlayText}>
+            <b>WELCOME TO</b>
+            <br />
+            <b
+              style={{
+                fontSize: "4em",
+                letterSpacing: "2px",
+                color: "#D69836",
+                textShadow: "2px 2px #605948",
+              }}
             >
-              Sign in
-            </Typography>
-            <form onSubmit={handleSubmit} className={classes.form} noValidate>
-              <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                type="text"
-                id="userName"
-                label="username"
-                name="userName"
-                onChange={handleUsernameChange}
-                autoComplete="userName"
-                autoFocus
-              />
-              <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                onChange={handlePasswordChange}
-                autoComplete="current-password"
-              />
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                color="primary"
-                className={classes.submit}
-              >
-                Sign In
-              </Button>
-              <Grid container>
-                <Grid item>
-                  <Link href="/signup" className={classes.form} variant="body2">
-                    Don't have an account? Sign Up
-                  </Link>
-                </Grid>
-              </Grid>
-            </form>
-          </div>
-        </Grid>
+              BEERME
+            </b>{" "}
+            <br />
+            BeerMe is a craft beer library and recommendation app.  Here you can
+            search for beers by style, learn about their flavors, and get to
+            know common beer terms to make you a part of the educated beer
+            drinker elite. Cheers!
+          </Typography>
+        </div>
       </Grid>
-    </div>
+      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+        <div className={classes.paper}>
+          <Avatar className={classes.avatar}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography style={{ color: "#605948" }} component="h1" variant="h5">
+            Sign in
+          </Typography>
+          <form onSubmit={handleSubmit} className={classes.form} noValidate>
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              type="text"
+              id="userName"
+              label="username"
+              name="userName"
+              onChange={handleUsernameChange}
+              autoComplete="userName"
+              autoFocus
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              onChange={handlePasswordChange}
+              autoComplete="current-password"
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+            >
+              Sign In
+            </Button>
+            <Grid container>
+              <Grid item>
+                <Link href="/signup" className={classes.form} variant="body2">
+                  Don't have an account? Sign Up
+                </Link>
+              </Grid>
+            </Grid>
+          </form>
+        </div>
+      </Grid>
+    </Grid>
   );
 }
 

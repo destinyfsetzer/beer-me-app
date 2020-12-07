@@ -46,14 +46,6 @@ export default function SignUp() {
   const [userName, setUserName] = useState(null);
   const [password, setPassword] = useState(null);
 
-  // const newUser = {
-  //   firstName: firstName,
-  //   lastName: lastName,
-  //   email: email,
-  //   userName: userName,
-  //   password: password,
-  // };
-
   const handleTextChange = (evt) => {
     if (evt.target.name === "userName") {
       setUserName(evt.target.value);
@@ -79,22 +71,6 @@ export default function SignUp() {
     });
     const content = await rawResponse.text();
     console.log("Response", content);
-
-    // (async () => {
-    //   const rawResponse = await fetch("/users", {
-    //     method: "POST",
-    //     headers: {
-    //       Accept: "application/json",
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //       userName: userName,
-    //       password: password,
-    //     }),
-    //   });
-    //   const content = await rawResponse.json();
-    //   console.log("Response", content);
-    // })();
     window.location.replace("/");
   };
 
