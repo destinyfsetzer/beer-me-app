@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 // import { checkAuth } from "./CheckAuth";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
@@ -69,8 +70,18 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Login() {
   const [users, setUsers] = useState([]);
+  const [userName, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   // const [redirectHome, setRedirectHome] = React.useState(false);
   const classes = useStyles();
+
+  const handleUsernameChange = (e) => {
+    setUsername(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
 
   // useEffect calls the function that will fetch data from backend and set state with response.
   useEffect(() => {
@@ -90,8 +101,30 @@ export default function Login() {
     return body;
   };
 
-  const handleSubmit = (e) => {
+  let token;
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    //  const rawResponse = await fetch("http://localhost:3001/auth/login", {
+    //   method: "POST",
+    //   headers: {
+    //     Accept: "application/json",
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     userName: userName,
+    //     password: password,
+    //   }),
+    // });
+
+    await axios
+      .post("http://localhost:3001/auth/login", {
+        userName: userName,
+        password: password,
+      })
+      .then((res) => {
+        token = res.data.token;
+      });
+
     document.cookie = "loggedIn=true;max-age=60*1000";
     window.location.replace("/search");
     // props.history.push("/search");
@@ -148,6 +181,7 @@ export default function Login() {
                 id="userName"
                 label="username"
                 name="userName"
+                onChange={handleUsernameChange}
                 autoComplete="userName"
                 autoFocus
               />
@@ -160,6 +194,7 @@ export default function Login() {
                 label="Password"
                 type="password"
                 id="password"
+                onChange={handlePasswordChange}
                 autoComplete="current-password"
               />
               <Button
