@@ -23,6 +23,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "google-map-react": "^2.1.9",
+    "heroku": "^7.47.4",
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.17",
