@@ -116,7 +116,7 @@ export default function Login() {
     // });
 
     await axios
-      .post("http://localhost:3001/auth/login", {
+      .post("/auth/login", {
         userName: userName,
         password: password,
       })

@@ -58,7 +58,7 @@ export default function SignUp() {
   const handleSubmit = async (evt) => {
     evt.preventDefault();
 
-    const rawResponse = await fetch("http://localhost:3001/auth/signup", {
+    const rawResponse = await fetch("/auth/signup", {
       method: "POST",
       headers: {
         Accept: "application/json",
