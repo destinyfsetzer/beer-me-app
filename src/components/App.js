@@ -125,10 +125,10 @@ class App extends Component {
     return (
       <Router>
         <div className="main">
-          <Route path="/" exact>
+          <Route exact path="/">
             <Login />
           </Route>
-          <Route path="/signup" exact>
+          <Route path="/signup">
             <SignUp />
           </Route>
         </div>
@@ -143,12 +143,11 @@ class App extends Component {
             />
             <main className="site-main container col-sm-8">
               <div className="site-content">
-                <ProtectedRoute path="/search" exact>
+                <ProtectedRoute path="/search">
                   <SearchBar
                     onBeerSubmit={this.handleTermSubmit}
                     totalResults={this.state.totalResults}
                   />
-
                   <SearchNav
                     onBeerSubmit={this.handleTermSubmit}
                     currentPage={this.state.currentPage}

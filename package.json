@@ -45,8 +45,8 @@
     "validator": "^13.1.17"
   },
   "scripts": {
-    "start": "npm start",
-    "server": "nodemon Server/index.js",
+    "start": "react-scripts start",
+    "server": "node Server/index.js",
     "start-dev": "concurrently \"npm run server\" \"react-scripts start\" ",
     "build": "react-scripts build",
     "test": "react-scripts test",
