@@ -48,9 +48,9 @@ class App extends Component {
 
   // fetch all data from api
   componentDidMount = async () => {
-    const response = await brewery.get("/beers");
-    const random = await brewery.get("/random");
-    const categories = await brewery.get("/categories");
+    const response = await brewery.get("api/beers");
+    const random = await brewery.get("api/random");
+    const categories = await brewery.get("api/categories");
 
     this.setState({
       beers: response.data.data,

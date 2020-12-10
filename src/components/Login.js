@@ -110,7 +110,7 @@ export default function Login() {
       })
       .then((res) => {
         document.cookie = `token=${res.data.token}`;
-        console.log(cookies.token);
+        // console.log(cookies.token);
       });
 
     document.cookie = "loggedIn=true;max-age=60*1000";
