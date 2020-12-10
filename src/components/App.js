@@ -136,14 +136,15 @@ class App extends Component {
 
         <div className="content-area">
           {/* conditionally render sidebar if logged in */}
-          {/* {checkAuth() && ( */}
-          <Sidebar
-            onBeerSubmit={this.handleTermSubmit}
-            getCategories={this.getCategories}
-          />
+          {checkAuth() && (
+            <Sidebar
+              onBeerSubmit={this.handleTermSubmit}
+              getCategories={this.getCategories}
+            />
+          )}
           <main className="site-main container col-sm-8">
             <div className="site-content">
-              <Route path="/beerSearch">
+              <ProtectedRoute path="/beerSearch">
                 {console.log("anything to get your attention")}
                 <SearchBar
                   onBeerSubmit={this.handleTermSubmit}
@@ -160,7 +161,7 @@ class App extends Component {
                   numberOfPages={this.state.numberOfPages}
                   onPageSubmit={this.handlePagination}
                 />
-              </Route>
+              </ProtectedRoute>
 
               <ProtectedRoute path="/beer-categories">
                 <CategoryList categories={this.state.categories} />
