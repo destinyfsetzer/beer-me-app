@@ -103,18 +103,6 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    //  const rawResponse = await fetch("http://localhost:3001/auth/login", {
-    //   method: "POST",
-    //   headers: {
-    //     Accept: "application/json",
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({
-    //     userName: userName,
-    //     password: password,
-    //   }),
-    // });
-
     await axios
       .post("/auth/login", {
         userName: userName,
@@ -126,7 +114,7 @@ export default function Login() {
       });
 
     document.cookie = "loggedIn=true;max-age=60*1000";
-    window.location.replace("/search");
+    window.location.assign("/search");
     // props.history.push("/search");
     // setRedirectHome(true);
   };

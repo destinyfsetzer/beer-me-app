@@ -92,7 +92,7 @@ class Sidebar extends Component {
             <li
               onClick={() => {
                 document.cookie = "loggedIn=";
-                window.location.replace("/");
+                window.location.assign("/");
               }}
               className="nav-item"
             >
