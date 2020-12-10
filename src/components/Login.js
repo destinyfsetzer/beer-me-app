@@ -5,7 +5,7 @@ import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
-import Link from "@material-ui/core/Link";
+import { Link, Redirect } from "react-router-dom";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
@@ -72,7 +72,7 @@ export default function Login() {
   const [users, setUsers] = useState([]);
   const [userName, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  // const [redirectHome, setRedirectHome] = React.useState(false);
+  const [redirectSearch, setRedirectSearch] = React.useState(false);
   const classes = useStyles();
 
   const handleUsernameChange = (e) => {
@@ -114,11 +114,14 @@ export default function Login() {
       });
 
     document.cookie = "loggedIn=true;max-age=60*1000";
-    window.location.assign("/search");
+    // window.location.assign("/search");
     // props.history.push("/search");
-    // setRedirectHome(true);
+    setRedirectSearch(true);
   };
 
+  if (redirectSearch) {
+    return <Redirect to="/search" />;
+  }
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />

@@ -9,7 +9,7 @@ import {
   Typography,
   Container,
 } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 
 const useStyles = makeStyles((theme) => ({
@@ -45,6 +45,7 @@ export default function SignUp() {
   const classes = useStyles();
   const [userName, setUserName] = useState(null);
   const [password, setPassword] = useState(null);
+  const [redirectSearch, setRedirectSearch] = useState(null);
 
   const handleTextChange = (evt) => {
     if (evt.target.name === "userName") {
@@ -71,12 +72,15 @@ export default function SignUp() {
     });
     const content = await rawResponse.text();
     console.log("Response", content);
-    window.location.assign("/");
+    setRedirectSearch(true);
   };
 
   let textInput4 = useRef(null);
   let textInput5 = useRef(null);
 
+  if (redirectSearch) {
+    return <Redirect to="/search" />;
+  }
   return (
     <div>
       <Typography className={classes.quote}>
