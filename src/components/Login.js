@@ -68,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Login() {
-  const cookies = cookie.parse(document.cookie);
+  // const cookies = cookie.parse(document.cookie);
   const [users, setUsers] = useState([]);
   const [userName, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -113,7 +113,6 @@ export default function Login() {
         setRedirectSearch(true);
         // console.log(cookies.token);
       });
-
     document.cookie = "loggedIn=true;max-age=60*1000";
     // window.location.assign("/search");
     // props.history.push("/search");
