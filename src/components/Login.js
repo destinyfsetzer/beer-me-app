@@ -110,13 +110,13 @@ export default function Login() {
       })
       .then((res) => {
         document.cookie = `token=${res.data.token}`;
+        setRedirectSearch(true);
         // console.log(cookies.token);
       });
 
     document.cookie = "loggedIn=true;max-age=60*1000";
     // window.location.assign("/search");
     // props.history.push("/search");
-    setRedirectSearch(true);
   };
 
   if (redirectSearch) {
@@ -201,7 +201,7 @@ export default function Login() {
             <Grid container>
               <Grid item>
                 <Link
-                  href="/signup"
+                  to="/signup"
                   style={{ fontFamily: "Raleway, sans-serif" }}
                   className={classes.form}
                   variant="body2"
