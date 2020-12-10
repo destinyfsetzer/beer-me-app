@@ -79,7 +79,7 @@ export default function SignUp() {
   let textInput5 = useRef(null);
 
   if (redirectSearch) {
-    return <Redirect to="/search" />;
+    return <Redirect to="/beerSearch" />;
   }
   return (
     <div>

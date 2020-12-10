@@ -32,7 +32,7 @@ class Sidebar extends Component {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/search"
+                to="/beerSearch"
                 className="nav-link"
                 activeClassName="active"
               >

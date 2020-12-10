@@ -120,7 +120,7 @@ export default function Login() {
   };
 
   if (redirectSearch) {
-    return <Redirect to="/search" />;
+    return <Redirect to="/beerSearch" />;
   }
   return (
     <Grid container component="main" className={classes.root}>

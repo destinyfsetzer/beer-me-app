@@ -143,7 +143,7 @@ class App extends Component {
             />
             <main className="site-main container col-sm-8">
               <div className="site-content">
-                <ProtectedRoute path="/search">
+                <ProtectedRoute path="/beerSearch">
                   <SearchBar
                     onBeerSubmit={this.handleTermSubmit}
                     totalResults={this.state.totalResults}
