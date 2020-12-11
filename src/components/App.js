@@ -138,7 +138,7 @@ class App extends Component {
 
         <div className="content-area">
           {/* conditionally render sidebar if logged in */}
-          {checkAuth && (
+          {this.cookies.loggedIn && (
             <Sidebar
               onBeerSubmit={this.handleTermSubmit}
               getCategories={this.getCategories}
