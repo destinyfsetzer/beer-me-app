@@ -45,7 +45,7 @@ export default function SignUp() {
   const classes = useStyles();
   const [userName, setUserName] = useState(null);
   const [password, setPassword] = useState(null);
-  const [redirectSearch, setRedirectSearch] = useState(null);
+  const [redirectHome, setRedirectHome] = useState(null);
 
   const handleTextChange = (evt) => {
     if (evt.target.name === "userName") {
@@ -72,14 +72,14 @@ export default function SignUp() {
     });
     const content = await rawResponse.text();
     console.log("Response", content);
-    setRedirectSearch(true);
+    setRedirectHome(true);
   };
 
   let textInput4 = useRef(null);
   let textInput5 = useRef(null);
 
-  if (redirectSearch) {
-    return <Redirect to="/beerSearch" />;
+  if (redirectHome) {
+    return <Redirect to="/" />;
   }
   return (
     <div>
