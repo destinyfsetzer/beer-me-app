@@ -138,12 +138,12 @@ class App extends Component {
 
         <div className="content-area">
           {/* conditionally render sidebar if logged in */}
-          {this.cookies.loggedIn && (
-            <Sidebar
-              onBeerSubmit={this.handleTermSubmit}
-              getCategories={this.getCategories}
-            />
-          )}
+          {/* {this.cookies.loggedIn && ( */}
+          <Sidebar
+            onBeerSubmit={this.handleTermSubmit}
+            getCategories={this.getCategories}
+          />
+          {/* )} */}
           <main className="site-main container col-sm-8">
             <div className="site-content">
               <ProtectedRoute path="/beerSearch">
