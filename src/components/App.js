@@ -139,18 +139,14 @@ class App extends Component {
         <div className="content-area">
           {/* conditionally render sidebar if logged in */}
           {/* {this.cookies.loggedIn && ( */}
-          {/* <Sidebar
+          <Sidebar
             onBeerSubmit={this.handleTermSubmit}
             getCategories={this.getCategories}
-          /> */}
+          />
           {/* )} */}
           <main className="site-main container col-sm-8">
             <div className="site-content">
               <ProtectedRoute path="/beerSearch">
-                <Sidebar
-                  onBeerSubmit={this.handleTermSubmit}
-                  getCategories={this.getCategories}
-                />
                 {console.log("anything to get your attention")}
                 <SearchBar
                   onBeerSubmit={this.handleTermSubmit}
@@ -173,18 +169,10 @@ class App extends Component {
                 <CategoryList categories={this.state.categories} />
               </ProtectedRoute>
               <ProtectedRoute path="/beer-school">
-                <Sidebar
-                  onBeerSubmit={this.handleTermSubmit}
-                  getCategories={this.getCategories}
-                />
                 <BeerSchool />
               </ProtectedRoute>
 
               <ProtectedRoute path="/random">
-                <Sidebar
-                  onBeerSubmit={this.handleTermSubmit}
-                  getCategories={this.getCategories}
-                />
                 <RandomBeer
                   random={this.state.randomBeer}
                   getRandomBeer={this.getRandomBeer}
