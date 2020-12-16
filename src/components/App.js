@@ -126,26 +126,17 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="main">
-          <Route exact path="/">
-            <Login />
-          </Route>
-          <Route path="/signup">
-            <SignUp />
-          </Route>
-        </div>
         <div className="content-area">
+          <div className="main">
+            <Route exact path="/">
+              <Login />
+            </Route>
+            <Route path="/signup">
+              <SignUp />
+            </Route>
+          </div>
+
           {/* conditionally render sidebar if logged in */}
-          {/* {this.cookies.loggedIn && (
-            <Sidebar
-              onBeerSubmit={this.handleTermSubmit}
-              getCategories={this.getCategories}
-            />
-          )} */}
-          {/* <Sidebar
-            onBeerSubmit={this.handleTermSubmit}
-            getCategories={this.getCategories}
-          /> */}
           <main className="site-main container col-sm-8">
             {/* {this.cookies.loggedIn && (
               <Sidebar
