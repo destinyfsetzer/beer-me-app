@@ -135,12 +135,12 @@ class App extends Component {
           </Route>
         </div>
         {/* conditionally render everything if logged in  */}
-        {this.cookies.loggedIn && (
-          <Sidebar
-            onBeerSubmit={this.handleTermSubmit}
-            getCategories={this.getCategories}
-          />
-        )}
+        {/* {this.cookies.loggedIn && ( */}
+        <Sidebar
+          onBeerSubmit={this.handleTermSubmit}
+          getCategories={this.getCategories}
+        />
+        {/* // )} */}
         <div className="content-area">
           {/* conditionally render sidebar if logged in */}
           {/* {this.cookies.loggedIn && (
